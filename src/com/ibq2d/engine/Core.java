@@ -24,7 +24,7 @@ public class Core {
     public void start() {
         if (isRunning)
             return;
-        
+
         run();
     }
 

@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fa5ebcf-5aa1-4b76-acc8-85eff4f90f54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Box.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/BoxCollider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Circle.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/CircleCollider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Collider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/ContactDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/ContactListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/GameListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/GameObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/IContactListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/IGameListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/RenderUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Shape.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Texture.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Transform.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Core.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/Core.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ibq2d.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,11 +58,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Core.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Core.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/Core.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5815832">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.10135135">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -129,6 +126,7 @@
         <option value="$PROJECT_DIR$/src/com/ibq2d/engine/GameListener.java" />
         <option value="$PROJECT_DIR$/src/com/ibq2d/engine/Player.java" />
         <option value="$PROJECT_DIR$/src/com/ibq2d/engine/Core.java" />
+        <option value="$PROJECT_DIR$/src/README.md" />
       </list>
     </option>
   </component>
@@ -304,6 +302,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/libs" />
     </key>
   </component>
@@ -567,7 +566,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -580,7 +579,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -983,8 +982,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/Core.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5815832">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10135135">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
