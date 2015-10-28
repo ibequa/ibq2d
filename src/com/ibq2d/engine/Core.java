@@ -1,5 +1,7 @@
 package com.ibq2d.engine;
 
+import java.util.ArrayList;
+
 public class Core {
 
     public static final int WIDTH = 640;
@@ -14,8 +16,10 @@ public class Core {
         Window.createWindow(WIDTH, HEIGHT, TITLE);
 
         Core game = new Core();
+
         game.start();
     }
+
 
     Core() {
         isRunning = false;
@@ -24,6 +28,9 @@ public class Core {
     public void start() {
         if (isRunning)
             return;
+
+        for (IGameListener gameListener : GameListenersList.gameListeners)
+            gameListener.start();
 
         run();
     }
@@ -35,8 +42,11 @@ public class Core {
         double timeLeft = 0;
         double frameTime = 1.0 / (double) Core.targetFrameRate;
 
+        boolean render;
+
         while (isRunning) {
-            boolean render = false;
+            
+            render = false;
 
             double currentTime = Time.getTime();
             double elapsedTime = currentTime - lastTime;
@@ -54,12 +64,14 @@ public class Core {
                 }
                 Input.updateBuffer();
 
-                // TOOD: Update game here
-            }
-            if (render)
-                render();
+                for (IGameListener gameListener : GameListenersList.gameListeners)
+                    gameListener.update();
 
-            Time.deltaTime = elapsedTime;
+                if (render)
+                    render();
+
+                Time.deltaTime = elapsedTime;
+            }
         }
     }
 

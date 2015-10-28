@@ -49,12 +49,17 @@ public class ContactDetection {
     }
 
     private boolean primitiveOverlap(Circle a, Circle b) {
-        return false;
+        float distance = (Vector2.subtract(a.position, b.position)).magnitude();
+
+        return (distance <= (a.getRadius() + b.getRadius()));
     }
-    private boolean primitiveOverlap(Box a, Box b) {
-        return false;
+
+    private boolean primitiveOverlap(Rect a, Rect b) {
+
+        return  false;
     }
-    private boolean primitiveOverlap(Box a, Circle b) {
+
+    private boolean primitiveOverlap(Rect a, Circle b) {
         return false;
     }
 

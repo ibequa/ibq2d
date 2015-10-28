@@ -1,14 +1,14 @@
 package com.ibq2d.engine;
 
 public class Vector2 {
-    public float x, y;
+    private float x, y;
 
     private float magnitude, sqrMagnitude;
     private Vector2 normalized;
 
-    public static final Vector2 one = new Vector2(1, 1);
-    public static final Vector2 zero = new Vector2(0, 0);
-    public static final Vector2 left = new Vector2(-1, 0);
+    public static final Vector2 one   = new Vector2(1, 1);
+    public static final Vector2 zero  = new Vector2(0, 0);
+    public static final Vector2 left  = new Vector2(-1, 0);
     public static final Vector2 right = new Vector2(1, 0);
 
     Vector2(float x, float y) {
@@ -24,16 +24,27 @@ public class Vector2 {
     public void set(float x, float y) {
         this.x = x;
         this.y = y;
+        magnitude = -1;
+        sqrMagnitude = -1;
+        normalized = null;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
     }
 
     public float magnitude() {
-        if (this.magnitude == -1)
+        if (this.magnitude < 0)
             return this.magnitude = (float) Math.sqrt(this.x * this.x + this.y * this.y);
         else return this.magnitude;
     }
 
     public float sqrMagnitude() {
-        if (this.sqrMagnitude == -1)
+        if (this.sqrMagnitude < 0)
             return this.sqrMagnitude = (this.x * this.x + this.y * this.y);
         else return this.sqrMagnitude;
     }
