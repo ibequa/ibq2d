@@ -3,7 +3,8 @@ package com.ibq2d.engine;
 import java.util.ArrayList;
 
 public abstract class Shape {
-    public Vector2 position;
+    private Vector2 position;
+    private float rotation;
 
     public ArrayList<Edge> edges;
 
@@ -13,6 +14,19 @@ public abstract class Shape {
         this.position = position;
         vertices = new ArrayList<Vector2>();
         edges = new ArrayList<Edge>();
+    }
+
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    public float getRotation() {
+        return rotation;
+    }
+
+    public void setPosition(Vector2 newPosition) {
+        translate(Vector2.subtract(newPosition, getPosition()));
+        this.position = newPosition;
     }
 
     public void scale(float byX, float byY) {
@@ -38,12 +52,12 @@ public abstract class Shape {
     }
 
     public void rotate(double degree) {
+        this.rotation = ((float) degree + getRotation()) % 360;
+
         degree = Math.toRadians(degree);
         for (int i = 0; i < vertices.size(); i++) {
             vertices.get(i).set(new Vector2((float) (vertices.get(i).getX() * Math.cos(degree) - vertices.get(i).getY() * Math.sin(degree)),
                     (float) (vertices.get(i).getX() * Math.sin(degree) + vertices.get(i).getY() * Math.cos(degree))));
         }
-        position = new Vector2((float) (position.getX() * Math.cos(degree) - position.getY() * Math.sin(degree)),
-                (float) (position.getX() * Math.sin(degree) + position.getY() * Math.cos(degree)));
     }
 }

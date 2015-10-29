@@ -7,4 +7,9 @@ public class BoxCollider extends Collider {
 
         this.isTrigger = isTrigger;
     }
+
+    BoxCollider(Rect rect, boolean isTrigger, ContactListener contactListener) {
+        super(rect, contactListener);
+        this.isTrigger = isTrigger;
+    }
 }

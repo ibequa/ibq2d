@@ -4,9 +4,22 @@ public class RigidBody {
     private Sprite sprite;
     private Collider collider;
 
+    private Vector2 position;
+
     public RigidBody(Sprite sprite, Collider collider) {
         this.sprite = sprite;
         this.collider = collider;
+    }
+
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    public void setPosition(Vector2 position) {
+        this.position = position;
+
+        sprite.setPosition(position);
+        collider.shape.setPosition(position);
     }
 
     public Sprite getSprite() {

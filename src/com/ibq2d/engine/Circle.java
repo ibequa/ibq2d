@@ -36,4 +36,9 @@ public class Circle extends Shape {
             return;
         setRadius(getRadius() * byX);
     }
+
+    @Override
+    public void rotate(double degree) {
+        return;
+    }
 }

@@ -7,4 +7,9 @@ public class CircleCollider extends Collider {
 
         this.isTrigger = isTrigger;
     }
+
+    CircleCollider(Circle circle, boolean isTrigger, ContactListener contactListener) {
+        super(circle, contactListener);
+        this.isTrigger = isTrigger;
+    }
 }

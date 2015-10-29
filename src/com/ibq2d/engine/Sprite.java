@@ -1,9 +1,35 @@
 package com.ibq2d.engine;
 
 public class Sprite {
-    public Texture texture;
+    private Texture texture;
+
+    private Vector2 position;
+    private float rotation;
 
     public Sprite(Texture texture) {
+        this.texture = texture;
+        position = Vector2.zero;
+    }
+
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    // in degrees
+    public float getRotation() {
+        return rotation;
+    }
+
+    public void setPosition(Vector2 position) {
+        this.position = position;
+        // gl change pos
+    }
+
+    public Texture getTexture() {
+        return texture;
+    }
+
+    public void setTexture(Texture texture) {
         this.texture = texture;
     }
 
@@ -13,6 +39,7 @@ public class Sprite {
 
     public void rotate(float degree) {
         // gl rotate
+        this.rotation = (degree + getRotation()) % 360;
     }
 
     public void translate(Vector2 byVec) {

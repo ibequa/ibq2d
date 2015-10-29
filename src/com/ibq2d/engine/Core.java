@@ -1,7 +1,5 @@
 package com.ibq2d.engine;
 
-import java.util.ArrayList;
-
 public class Core {
 
     public static final int WIDTH = 640;
@@ -45,7 +43,7 @@ public class Core {
         boolean render;
 
         while (isRunning) {
-            
+
             render = false;
 
             double currentTime = Time.getTime();
@@ -63,6 +61,7 @@ public class Core {
                     return;
                 }
                 Input.updateBuffer();
+                ContactDetection.checkCollisions();
 
                 for (IGameListener gameListener : GameListenersList.gameListeners)
                     gameListener.update();

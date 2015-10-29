@@ -21,9 +21,9 @@ public class Rect extends Shape {
     }
 
     void calculateCoordinates() {
-        float xMin = position.getX() - width/2.0f;
+        float xMin = getPosition().getX() - width/2.0f;
         float xMax = xMin + width;
-        float yMin = position.getY() - height/2.0f;
+        float yMin = getPosition().getY() - height/2.0f;
         float yMax = yMin + height;
         vertices.add(new Vector2(xMin, yMin));
         vertices.add(new Vector2(xMin, yMax));

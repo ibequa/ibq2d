@@ -19,7 +19,7 @@ public final class Geometry {
     }
 
     public static boolean isVectorInCircle(Vector2 vec, Circle circle) {
-        return (Vector2.subtract(vec, circle.position).magnitude() <= circle.getDiameter());
+        return (Vector2.subtract(vec, circle.getPosition()).magnitude() <= circle.getDiameter());
     }
 
     // TODO: IMPLEMENT!!!
@@ -50,7 +50,7 @@ public final class Geometry {
     }
 
     public static boolean shapesOverlap(Circle a, Circle b) {
-        float distance = (Vector2.subtract(a.position, b.position)).magnitude();
+        float distance = Vector2.subtract(a.getPosition(), b.getPosition()).magnitude();
 
         return (distance <= (a.getRadius() + b.getRadius()));
     }
