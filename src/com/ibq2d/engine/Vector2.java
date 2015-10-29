@@ -1,5 +1,7 @@
 package com.ibq2d.engine;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 public class Vector2 {
     private float x, y;
 
@@ -21,12 +23,31 @@ public class Vector2 {
         magnitude = sqrMagnitude = -1;
     }
 
-    public void set(float x, float y) {
-        this.x = x;
-        this.y = y;
+    private void resetVectorParams() {
         magnitude = -1;
         sqrMagnitude = -1;
         normalized = null;
+    }
+
+    public void set(float x, float y) {
+        this.x = x;
+        this.y = y;
+        resetVectorParams();
+    }
+
+    public void set(Vector2 vec) {
+        this.x = vec.x;
+        this.y = vec.y;
+        resetVectorParams();
+    }
+
+    public void setX(float newX) {
+        this.x = newX;
+        resetVectorParams();
+    }
+    public void setY(float newY) {
+        this.y = newY;
+        resetVectorParams();
     }
 
     public float getX() {
@@ -60,6 +81,22 @@ public class Vector2 {
         this.y /= this.magnitude();
     }
 
+    public float angle(Vector2 vec) {
+        return (float) Math.toDegrees(angleRad(vec));
+    }
+
+    public float angleRad(Vector2 vec) {
+        return (float) (Math.acos(dot(this, vec) / (this.magnitude() * vec.magnitude())));
+    }
+
+    public float angle() {
+        throw new NotImplementedException();
+    }
+
+    public float angleRad() {
+        throw new NotImplementedException();
+    }
+
     public static Vector2 lerp(Vector2 a, Vector2 b, float t) {
         t = Mathq.clamp01(t);
         return Vector2.add(a.multiplyBy(1 - t), b.multiplyBy(t)); // (1-t)*a + b*t
@@ -71,7 +108,7 @@ public class Vector2 {
     public Vector2 divideBy(float number) { return new Vector2(this.x / number, this.y / number); }
     public Vector2 multiplyBy(float number) { return new Vector2(this.x * number, this.y * number); }
 
-    public static double dot(Vector2 a, Vector2 b) { return a.x * b.x + a.y * b.y; }
+    public static float dot(Vector2 a, Vector2 b) { return a.x * b.x + a.y * b.y; }
 
     @Override
     public String toString() {

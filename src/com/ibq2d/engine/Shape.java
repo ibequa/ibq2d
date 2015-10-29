@@ -17,30 +17,30 @@ public abstract class Shape {
 
     public void scale(float byX, float byY) {
         // get to origin -> scale -> get back
-
     }
 
     public void translate(Vector2 byVec) {
         for (int i = 0; i < vertices.size(); i++)
-            vertices.set(i, Vector2.add(vertices.get(i), byVec));
+            vertices.get(i).set(Vector2.add(vertices.get(i), byVec));
         position = Vector2.add(position, byVec);
     }
 
     public void translateX(float byX) {
         for (int i = 0; i < vertices.size(); i++)
-            vertices.set(i, new Vector2(vertices.get(i).getX() + byX, vertices.get(i).getY()));
+            vertices.get(i).set(new Vector2(vertices.get(i).getX() + byX, vertices.get(i).getY()));
         position = new Vector2(position.getX() + byX, position.getY());
     }
 
     public void translateY(float byY) {
         for (int i = 0; i < vertices.size(); i++)
-            vertices.set(i, new Vector2(vertices.get(i).getX(), vertices.get(i).getY() + byY));
+            vertices.get(i).set(new Vector2(vertices.get(i).getX(), vertices.get(i).getY() + byY));
         position = new Vector2(position.getX(), position.getY() + byY);
     }
 
-    public void rotate(float degree) {
+    public void rotate(double degree) {
+        degree = Math.toRadians(degree);
         for (int i = 0; i < vertices.size(); i++) {
-            vertices.set(i, new Vector2((float) (vertices.get(i).getX() * Math.cos(degree) - vertices.get(i).getY() * Math.sin(degree)),
+            vertices.get(i).set(new Vector2((float) (vertices.get(i).getX() * Math.cos(degree) - vertices.get(i).getY() * Math.sin(degree)),
                     (float) (vertices.get(i).getX() * Math.sin(degree) + vertices.get(i).getY() * Math.cos(degree))));
         }
         position = new Vector2((float) (position.getX() * Math.cos(degree) - position.getY() * Math.sin(degree)),

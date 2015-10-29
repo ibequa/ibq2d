@@ -13,5 +13,12 @@ public class Player extends GameListener {
 
     @Override
     public void start() {
+        Shape box = new Rect(2, 2, Vector2.zero);
+        Vector2 vec = Vector2.right;
+        System.out.println(vec.angle(Vector2.one));
+    }
+
+    @Override
+    public void update() {
     }
 }

@@ -7,7 +7,7 @@ public class Sprite {
         this.texture = texture;
     }
 
-    public void scale(float s) {
+    public void scale(float byX, float byY) {
         // gl scale
     }
 

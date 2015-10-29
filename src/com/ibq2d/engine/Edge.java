@@ -21,8 +21,8 @@ public class Edge {
     }
 
     private void calculateParams() {
-        k = (vec1.x - vec0.x)/(vec1.y - vec0.y);
-        m = vec1.y - k*vec1.x;
+        k = (vec1.getX() - vec0.getX())/(vec1.getY() - vec0.getY());
+        m = vec1.getY() - k*vec1.getX();
     }
 
     @Override
