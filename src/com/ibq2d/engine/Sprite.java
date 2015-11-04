@@ -8,7 +8,12 @@ public class Sprite {
 
     public Sprite(Texture texture) {
         this.texture = texture;
-        position = Vector2.zero;
+        position = Vector2.zero();
+    }
+
+    public Sprite(Texture texture, Vector2 position) {
+        this.texture = texture;
+        this.position = position;
     }
 
     public Vector2 getPosition() {
@@ -18,6 +23,11 @@ public class Sprite {
     // in degrees
     public float getRotation() {
         return rotation;
+    }
+
+    public void setRotation(float degree) {
+        // gl rotate(-getrotation())
+        // gl rotate(degree)
     }
 
     public void setPosition(Vector2 position) {

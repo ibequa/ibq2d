@@ -16,6 +16,12 @@ public abstract class Shape {
         edges = new ArrayList<Edge>();
     }
 
+    public Shape() {
+        vertices = new ArrayList<Vector2>();
+        edges = new ArrayList<Edge>();
+        this.position = new Vector2(0, 0);
+    }
+
     public Vector2 getPosition() {
         return position;
     }
@@ -24,13 +30,33 @@ public abstract class Shape {
         return rotation;
     }
 
+    public void setRotation(float degree) {
+        rotate(-getRotation());
+        rotate(degree);
+    }
+
     public void setPosition(Vector2 newPosition) {
         translate(Vector2.subtract(newPosition, getPosition()));
         this.position = newPosition;
     }
 
     public void scale(float byX, float byY) {
-        // get to origin -> scale -> get back
+        for(int i = 0; i < vertices.size(); i++) {
+            Vector2 vertex = vertices.get(i);
+            vertex.set((vertex.getX() - position.getX()) * byX + position.getX(), ((vertex.getY() - position.getY()) * byY + position.getY()));
+        }
+    }
+    public void scaleX(float byX) {
+        for (int i = 0; i < vertices.size(); i++) {
+            Vector2 vertex = vertices.get(i);
+            vertex.setX((vertex.getX() - position.getX()) * byX + position.getX());
+        }
+    }
+    public void scaleY(float byY) {
+        for (int i = 0; i < vertices.size(); i++) {
+            Vector2 vertex = vertices.get(i);
+            vertex.setY((vertex.getY() - position.getY()) * byY + position.getY());
+        }
     }
 
     public void translate(Vector2 byVec) {

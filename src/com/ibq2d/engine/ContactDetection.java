@@ -1,7 +1,5 @@
 package com.ibq2d.engine;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.ArrayList;
 
 public class ContactDetection {
@@ -32,22 +30,24 @@ public class ContactDetection {
                 b.contactListener.onTriggerStay(a);
             }
         else {
-            a.contactListener.onContactStay(b);
-            b.contactListener.onContactStay(a);
         }
     }
 
     private static boolean overlap(Collider a, Collider b) {
         if (a.enabled && b.enabled) {
-            if (shapesOverlap(a.shape, b.shape))
+            if (shapesOverlapHandler(a.shape, b.shape))
                 return true;
         }
         return false;
     }
 
-    private static boolean shapesOverlap(Shape a, Shape b) {
+    private static boolean shapesOverlapHandler(Shape a, Shape b) {
         if (a.getClass() == Circle.class && b.getClass() == Circle.class)
             return Geometry.shapesOverlap((Circle) a, (Circle) b);
-        else throw new NotImplementedException();
+        else if (a.getClass() == Rect.class && b.getClass() == Circle.class)
+            return Geometry.shapesOverlap((Rect) a, (Circle) b);
+        else if (a.getClass() == Circle.class && b.getClass() == Rect.class)
+            return Geometry.shapesOverlap((Circle) a, (Rect) b);
+        else return Geometry.shapesOverlap(a, b);
     }
 }

@@ -27,6 +27,8 @@ public class Core {
         if (isRunning)
             return;
 
+        RenderUtil.init();
+
         for (IGameListener gameListener : GameListenersList.gameListeners)
             gameListener.start();
 
@@ -66,8 +68,10 @@ public class Core {
                 for (IGameListener gameListener : GameListenersList.gameListeners)
                     gameListener.update();
 
-                if (render)
+                if (render) {
+                    RenderUtil.clearScreen();
                     render();
+                }
 
                 Time.deltaTime = elapsedTime;
             }

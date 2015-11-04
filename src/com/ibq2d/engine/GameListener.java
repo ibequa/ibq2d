@@ -11,4 +11,9 @@ public abstract class GameListener implements IGameListener {
     public void update() {
 
     }
+
+    @Override
+    public void draw() {
+
+    }
 }

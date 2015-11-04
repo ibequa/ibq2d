@@ -14,11 +14,6 @@ public abstract class ContactListener implements IContactListener{
     }
 
     @Override
-    public void onContactStay(Collider collider) {
-
-    }
-
-    @Override
     public void onTriggerEnter(Collider collider) {
 
     }

@@ -12,6 +12,13 @@ public class Rect extends Shape {
         calculateCoordinates();
     }
 
+    public Rect(float width, float height) {
+        this.width = width;
+        this.height = height;
+
+        calculateCoordinates();
+    }
+
     public float getWidth() {
         return width;
     }

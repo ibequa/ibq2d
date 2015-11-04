@@ -20,6 +20,14 @@ public class Edge {
         return k*x + m;
     }
 
+    public Vector2 getVec0() {
+        return vec0;
+    }
+
+    public Vector2 getVec1() {
+        return vec1;
+    }
+
     private void calculateParams() {
         k = (vec1.getX() - vec0.getX())/(vec1.getY() - vec0.getY());
         m = vec1.getY() - k*vec1.getX();

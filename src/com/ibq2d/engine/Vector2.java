@@ -1,26 +1,36 @@
 package com.ibq2d.engine;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-public class Vector2 {
+public class Vector2 implements Comparable<Vector2> {
     private float x, y;
 
     private float magnitude, sqrMagnitude;
     private Vector2 normalized;
 
-    public static final Vector2 one   = new Vector2(1, 1);
-    public static final Vector2 zero  = new Vector2(0, 0);
-    public static final Vector2 left  = new Vector2(-1, 0);
-    public static final Vector2 right = new Vector2(1, 0);
+    public static Vector2 zero() { return new Vector2(0, 0); }
+    public static Vector2 one() { return new Vector2(1, 1); }
+    public static Vector2 up() { return new Vector2(0, 1); }
+    public static Vector2 down() { return new Vector2(0, -1); }
+    public static Vector2 left() { return new Vector2(-1, 0); }
+    public static Vector2 right() { return new Vector2(1, 0); }
+    public static Vector2 MIN_VECTOR() { return new Vector2(Float.MIN_VALUE, Float.MIN_VALUE); }
+    public static Vector2 MAX_VECTOR() { return new Vector2(Float.MAX_VALUE, Float.MAX_VALUE); }
 
-    Vector2(float x, float y) {
+    public Vector2(float x, float y) {
         this.x = x;
         this.y = y;
         magnitude = sqrMagnitude =  -1;
     }
 
-    Vector2() {
+    public Vector2() {
         magnitude = sqrMagnitude = -1;
+    }
+
+    public Vector2(Vector2 vec) {
+        this.x = vec.getX();
+        this.y = vec.getY();
+        this.magnitude = vec.magnitude();
+        this.sqrMagnitude = vec.sqrMagnitude();
+        this.normalized = vec.normalized();
     }
 
     private void resetVectorParams() {
@@ -90,16 +100,62 @@ public class Vector2 {
     }
 
     public float angle() {
-        throw new NotImplementedException();
+        return (float) Math.toDegrees(angleRad());
     }
 
     public float angleRad() {
-        throw new NotImplementedException();
+        return (float) Math.acos(this.getX() / (this.magnitude()));
+    }
+
+    public float distanceTo(Vector2 to) {
+        double sin = Math.sin(this.angleRad(to));
+        return (float) sin * this.magnitude();
+    }
+
+    public static float distance(Vector2 from, Vector2 to) {
+        double sin = Math.sin(from.angleRad(to));
+        return (float) sin * from.magnitude();
+    }
+
+    public Vector2 rotate(double degree) {
+        degree = Math.toRadians(degree);
+        double sin = Math.sin(degree);
+        double cos = Math.cos(degree);
+        float tx = (float) (getX() * cos - getY() * sin);
+        float ty = (float) (getX() * sin + getY() * cos);
+
+        return new Vector2(tx, ty);
+    }
+
+    public Vector2 project(Vector2 on) {
+        float angle = (float) Math.toRadians(this.angle(on));
+        float c = (float) Math.cos(angle) * this.magnitude();
+
+        return on.normalized().multiplyBy(c);
     }
 
     public static Vector2 lerp(Vector2 a, Vector2 b, float t) {
         t = Mathq.clamp01(t);
         return Vector2.add(a.multiplyBy(1 - t), b.multiplyBy(t)); // (1-t)*a + b*t
+    }
+
+    // all given vectors should lie on the same line
+    public static boolean overlap(Vector2 a0, Vector2 a1, Vector2 b0, Vector2 b1) {
+        Vector2 tmp;
+        if (a0.compareTo(a1) == 1) {
+            tmp = a0;
+            a0 = a1;
+            a1 = tmp;
+        }
+        if (b0.compareTo(b1) == 1) {
+            tmp = b0;
+            b0 = b1;
+            b1 = tmp;
+        }
+        if (a0.getX() != b0.getX())
+            return Geometry.lineSegmentOverlap(a0.getX(), a1.getX(), b0.getX(), b1.getX());
+        else
+            return Geometry.lineSegmentOverlap(a0.getY(), a1.getY(), b0.getY(), b1.getY());
     }
 
     public static Vector2 add(Vector2 a, Vector2 b) { return new Vector2(a.x + b.x, a.y + b.y); }
@@ -113,5 +169,14 @@ public class Vector2 {
     @Override
     public String toString() {
         return "(" + this.x + ", " + this.y + ")";
+    }
+
+    @Override
+    public int compareTo(Vector2 o) {
+        if (this.getX() == o.getX() && this.getY() == o.getY())
+            return 0;
+        else if (this.getY() <= o.getY() && this.getX() <= o.getX())
+            return -1;
+        else return 1;
     }
 }

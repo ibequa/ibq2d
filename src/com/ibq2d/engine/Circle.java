@@ -12,6 +12,13 @@ public class Circle extends Shape {
         vertices.add(position);
     }
 
+    public Circle(float radius) {
+        this.radius = radius;
+
+        diameter = radius * 2.0f;
+        vertices.add(getPosition());
+    }
+
     public float getRadius() {
         return radius;
     }

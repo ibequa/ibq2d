@@ -7,21 +7,28 @@ public final class RenderUtil {
     private RenderUtil() {}
 
     public static void init() {
-        glClearColor(1, 0, 0, 0);
-        glClearDepth(1);
+        // projection init
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(0, Core.WIDTH, 0, Core.HEIGHT, -1, 1);
+        glMatrixMode(GL_MODELVIEW);
+
+        // set buffers defaults
+        glClearColor(0, 0, 0, 0);
 
         // enable face culling, clockwise;
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         glFrontFace(GL_CW);
 
-        // set depth buffer
-        glEnable(GL_DEPTH_TEST);
-        glDepthMask(true);
-        glDepthFunc(GL_LEQUAL);
+        // disable depth buffer
+        glDisable(GL_DEPTH_TEST);
+
+        // enable textures
+        glEnable(GL_TEXTURE_2D);
     }
 
     public static void clearScreen() {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT);
     }
 }

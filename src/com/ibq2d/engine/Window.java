@@ -12,12 +12,16 @@ public class Window {
         try {
             Display.setDisplayMode(new DisplayMode(width, height));
             Display.create();
+            Display.setVSyncEnabled(true);
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
     }
 
     public static void render() {
+        for (IGameListener gml : GameListenersList.gameListeners)
+            gml.draw();
+
         Display.update();
     }
 
