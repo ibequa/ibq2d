@@ -32,6 +32,8 @@ public class Rect extends Shape {
         float xMax = xMin + width;
         float yMin = getPosition().getY() - height/2.0f;
         float yMax = yMin + height;
+
+        // clockwise
         vertices.add(new Vector2(xMin, yMin));
         vertices.add(new Vector2(xMin, yMax));
         vertices.add(new Vector2(xMax, yMax));

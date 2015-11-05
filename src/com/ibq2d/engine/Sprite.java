@@ -4,16 +4,23 @@ public class Sprite {
     private Texture texture;
 
     private Vector2 position;
+    private Vector2 scale;
     private float rotation;
 
     public Sprite(Texture texture) {
         this.texture = texture;
         position = Vector2.zero();
+        scale = Vector2.one();
     }
 
     public Sprite(Texture texture, Vector2 position) {
         this.texture = texture;
         this.position = position;
+        scale = Vector2.one();
+    }
+
+    public Vector2 getScale() {
+        return scale;
     }
 
     public Vector2 getPosition() {
@@ -26,13 +33,11 @@ public class Sprite {
     }
 
     public void setRotation(float degree) {
-        // gl rotate(-getrotation())
-        // gl rotate(degree)
+        rotation = degree;
     }
 
     public void setPosition(Vector2 position) {
         this.position = position;
-        // gl change pos
     }
 
     public Texture getTexture() {
@@ -44,24 +49,28 @@ public class Sprite {
     }
 
     public void scale(float byX, float byY) {
-        // gl scale
+        scale.set(scale.getX() * byX, scale.getY() * byY);
     }
 
     public void rotate(float degree) {
-        // gl rotate
         this.rotation = (degree + getRotation()) % 360;
     }
 
     public void translate(Vector2 byVec) {
-        // gl translate
+        position = Vector2.add(position, byVec);
     }
 
     public void translateX(float byX) {
-        // gl translate with y = const
+        position.set(position.getX() + byX, position.getY());
     }
 
     public void translateY(float byY) {
-        // gl translate with x = const
+        position.set(position.getX(), position.getY() + byY);
     }
 
+    public void draw(Batch batch) {
+        batch.begin();
+        batch.draw(getTexture(), position.getX() - texture.getWidth()/2, position.getY() - texture.getHeight()/2, scale.getX(), scale.getY(), rotation);
+        batch.end();
+    }
 }
