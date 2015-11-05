@@ -2,16 +2,10 @@ package com.ibq2d.engine;
 
 public class Core {
 
-    public static final int WIDTH = 640;
-    public static final int HEIGHT = 480;
-    public static final String TITLE = "ibq2d";
-
-    public static int targetFrameRate = 60;
-
     private boolean isRunning;
 
     public static void main(String[] args) {
-        Window.createWindow(WIDTH, HEIGHT, TITLE);
+        Window.createWindow(Application.WIDTH, Application.HEIGHT, Application.APP_NAME);
 
         Core game = new Core();
 
@@ -40,7 +34,7 @@ public class Core {
 
         double lastTime = Time.getTime();
         double timeLeft = 0;
-        double frameTime = 1.0 / (double) Core.targetFrameRate;
+        double frameTime = 1.0 / (double) Application.targetFrameRate;
 
         boolean render;
 

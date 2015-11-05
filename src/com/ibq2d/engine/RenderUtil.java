@@ -10,7 +10,7 @@ public final class RenderUtil {
         // projection init
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        glOrtho(0, Core.WIDTH, 0, Core.HEIGHT, -1, 1);
+        glOrtho(0, Application.WIDTH, 0, Application.HEIGHT, -1, 1);
         glMatrixMode(GL_MODELVIEW);
 
         // set buffers defaults

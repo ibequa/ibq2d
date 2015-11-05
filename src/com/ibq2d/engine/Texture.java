@@ -9,6 +9,7 @@ import java.io.IOException;
 
 public class Texture {
     private float width, height;
+    private float halfWidth, halfHeight;
     private boolean generateMipMaps;
     private int id;
     private boolean hasAlpha;
@@ -21,6 +22,8 @@ public class Texture {
             this.id = texture.getTextureID();
             this.width = texture.getImageWidth();
             this.height = texture.getImageHeight();
+            this.halfWidth = width/2;
+            this.halfHeight = height/2;
             this.hasAlpha = texture.hasAlpha();
 
         } catch (IOException e) {
@@ -44,6 +47,14 @@ public class Texture {
 
     public float getHeight() {
         return height;
+    }
+
+    public float getHalfWidth() {
+        return halfWidth;
+    }
+
+    public float getHalfHeight() {
+        return halfHeight;
     }
 
     public int getId() {

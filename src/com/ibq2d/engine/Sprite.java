@@ -19,6 +19,12 @@ public class Sprite {
         scale = Vector2.one();
     }
 
+    public Sprite(Texture texture, Vector2 position, Vector2 scale, float rotation) {
+        setPosition(position);
+        scale(scale.getX(), scale.getY());
+        setRotation(rotation);
+    }
+
     public Vector2 getScale() {
         return scale;
     }
@@ -26,6 +32,9 @@ public class Sprite {
     public Vector2 getPosition() {
         return position;
     }
+
+    public float getWidth() { return getTexture().getWidth(); }
+    public float getHeight() { return getTexture().getHeight(); }
 
     // in degrees
     public float getRotation() {
@@ -40,6 +49,9 @@ public class Sprite {
         this.position = position;
     }
 
+    public void setX(float x) { this.position.setX(x); }
+    public void setY(float y) { this.position.setY(y); }
+
     public Texture getTexture() {
         return texture;
     }
@@ -51,6 +63,7 @@ public class Sprite {
     public void scale(float byX, float byY) {
         scale.set(scale.getX() * byX, scale.getY() * byY);
     }
+    public void scaleXY(float by) { scale.set(scale.getX() * by, scale.getY() * by); }
 
     public void rotate(float degree) {
         this.rotation = (degree + getRotation()) % 360;
@@ -69,8 +82,6 @@ public class Sprite {
     }
 
     public void draw(Batch batch) {
-        batch.begin();
-        batch.draw(getTexture(), position.getX() - texture.getWidth()/2, position.getY() - texture.getHeight()/2, scale.getX(), scale.getY(), rotation);
-        batch.end();
+        batch.draw(getTexture(), position.getX(), position.getY(), scale.getX(), scale.getY(), rotation);
     }
 }
