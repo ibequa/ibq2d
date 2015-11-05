@@ -5,3 +5,4 @@
 - collision detection for convex boides(using hyperplane separation theorem)
 - game state callbacks
 - basic geometry
+- texture loading
