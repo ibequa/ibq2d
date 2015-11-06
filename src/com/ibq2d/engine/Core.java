@@ -17,7 +17,7 @@ public class Core {
         isRunning = false;
     }
 
-    public void start() {
+    protected void start() {
         if (isRunning)
             return;
 

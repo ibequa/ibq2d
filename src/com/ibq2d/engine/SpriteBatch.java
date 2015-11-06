@@ -3,6 +3,7 @@ package com.ibq2d.engine;
 import static org.lwjgl.opengl.GL11.*;
 
 public class SpriteBatch implements Batch {
+
     @Override
     public void draw(Texture texture, float x, float y) {
         x += Application.originX;

@@ -1,5 +1,7 @@
 package com.ibq2d.engine;
 
+import org.lwjgl.input.Keyboard;
+
 public final class Application {
     private Application() {}
 
@@ -12,4 +14,7 @@ public final class Application {
     public static final String APP_NAME = "ibq2d";
 
     public static final int targetFrameRate = 60;
+
+    public static final int[] horizontalAxis = { Keyboard.KEY_A, Keyboard.KEY_D };
+    public static final int[] verticalAxis = { Keyboard.KEY_S, Keyboard.KEY_W };
 }

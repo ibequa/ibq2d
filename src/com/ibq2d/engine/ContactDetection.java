@@ -6,7 +6,7 @@ public class ContactDetection {
 
     private static ArrayList<Collider> listeners = new ArrayList<Collider>();
 
-    public static void addListener(Collider listener) {
+    protected static void addListener(Collider listener) {
         listeners.add(listener);
     }
 

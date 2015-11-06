@@ -2,11 +2,10 @@ package com.ibq2d.engine;
 
 import static org.lwjgl.opengl.GL11.*;
 
-
 public final class RenderUtil {
     private RenderUtil() {}
 
-    public static void init() {
+    protected static void init() {
         // projection init
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
@@ -28,7 +27,7 @@ public final class RenderUtil {
         glEnable(GL_TEXTURE_2D);
     }
 
-    public static void clearScreen() {
+    protected static void clearScreen() {
         glClear(GL_COLOR_BUFFER_BIT);
     }
 }

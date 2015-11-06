@@ -10,10 +10,6 @@ public final class Input {
     private static HashSet<Integer> pressedKeys = new HashSet<Integer>();
     private static HashSet<Integer> releasedKeys = new HashSet<Integer>();
 
-    public static boolean getKey(int keyCode) {
-        return Keyboard.isKeyDown(keyCode);
-    }
-
     private static void updateKeyBuffer(int keyCode) {
         if (Keyboard.next()) {
             if (Keyboard.getEventKeyState())
@@ -23,7 +19,11 @@ public final class Input {
         }
     }
 
-    public static void updateBuffer() { pressedKeys.clear(); releasedKeys.clear(); }
+    protected static void updateBuffer() { pressedKeys.clear(); releasedKeys.clear(); }
+
+    public static boolean getKey(int keyCode) {
+        return Keyboard.isKeyDown(keyCode);
+    }
 
     public static boolean getKeyDown(int keyCode) {
         updateKeyBuffer(keyCode);
@@ -33,5 +33,13 @@ public final class Input {
     public static boolean getKeyUp(int keyCode) {
         updateKeyBuffer(keyCode);
         return releasedKeys.contains(keyCode);
+    }
+
+    public static int getHorizontalAxis() {
+        return getKey(Application.horizontalAxis[0]) ? -1 : (getKey(Application.horizontalAxis[1]) ? 1 : 0);
+    }
+
+    public static int getVerticalAxis() {
+        return getKey(Application.verticalAxis[0]) ? -1 : (getKey(Application.verticalAxis[1]) ? 1 : 0);
     }
 }

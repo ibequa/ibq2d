@@ -38,7 +38,7 @@ public class Rect extends Shape {
         return height;
     }
 
-    void calculateCoordinates() {
+    private void calculateCoordinates() {
         float xMin = getPosition().getX() - width/2.0f;
         float xMax = xMin + width;
         float yMin = getPosition().getY() - height/2.0f;

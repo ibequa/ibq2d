@@ -1,6 +1,6 @@
 package com.ibq2d.engine;
 
-public abstract class Collider {
+public class Collider {
     public boolean isTrigger;
     public boolean enabled = true;
 
@@ -9,7 +9,7 @@ public abstract class Collider {
 
     public final int id;
 
-    Collider(Shape shape, ContactListener contactListener) {
+    public Collider(Shape shape, ContactListener contactListener) {
         this.shape = shape;
         this.contactListener = contactListener;
 
