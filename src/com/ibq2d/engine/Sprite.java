@@ -25,6 +25,13 @@ public class Sprite {
         setRotation(rotation);
     }
 
+    public Sprite(Sprite sprite) {
+        texture = sprite.getTexture();
+        position = sprite.getPosition();
+        scale = sprite.getScale();
+        rotation = sprite.getRotation();
+    }
+
     public Vector2 getScale() {
         return scale;
     }

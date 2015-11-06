@@ -19,6 +19,17 @@ public class Rect extends Shape {
         calculateCoordinates();
     }
 
+    public Rect(Sprite sprite) {
+        super(sprite.getPosition());
+        this.width = sprite.getWidth();
+        this.height = sprite.getHeight();
+
+        calculateCoordinates();
+
+        rotate(sprite.getRotation());
+        scale(sprite.getScale().getX(), sprite.getScale().getY());
+    }
+
     public float getWidth() {
         return width;
     }

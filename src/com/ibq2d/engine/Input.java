@@ -15,13 +15,11 @@ public final class Input {
     }
 
     private static void updateKeyBuffer(int keyCode) {
-        while (Keyboard.next()) {
-            if (Keyboard.getEventKey() == keyCode) {
-                if (Keyboard.getEventKeyState())
-                    pressedKeys.add(keyCode);
-                else
-                    releasedKeys.add(keyCode);
-            }
+        if (Keyboard.next()) {
+            if (Keyboard.getEventKeyState())
+                pressedKeys.add(Keyboard.getEventKey());
+            else
+                releasedKeys.add(Keyboard.getEventKey());
         }
     }
 
