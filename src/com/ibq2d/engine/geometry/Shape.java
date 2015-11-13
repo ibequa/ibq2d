@@ -12,13 +12,13 @@ public abstract class Shape {
 
     public Shape(Vector2 position) {
         this.position = position;
-        vertices = new ArrayList<Vector2>();
-        edges = new ArrayList<Edge>();
+        vertices = new ArrayList<>();
+        edges = new ArrayList<>();
     }
 
     public Shape() {
-        vertices = new ArrayList<Vector2>();
-        edges = new ArrayList<Edge>();
+        vertices = new ArrayList<>();
+        edges = new ArrayList<>();
         this.position = new Vector2(0, 0);
     }
 

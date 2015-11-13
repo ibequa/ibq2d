@@ -32,6 +32,8 @@ public class Player extends GameListener {
         });
         spriteA.scaleXY(0.5f);
         colA.shape.scale(0.5f, 0.5f);
+        spriteA.translateY(Application.HEIGHT/4 + 90);
+        colA.shape.translateY(Application.HEIGHT/4 + 90);
     }
 
     @Override

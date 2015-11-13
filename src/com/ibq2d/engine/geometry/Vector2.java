@@ -129,11 +129,15 @@ public class Vector2 implements Comparable<Vector2> {
         return new Vector2(tx, ty);
     }
 
-    public Vector2 project(Vector2 on) {
+    public Vector2 vectorProjection(Vector2 on) {
         float dot1 = dot(on, this);
         float dot2 = dot(on, on);
 
         return on.multiplyBy(dot1/dot2);
+    }
+
+    public float scalarProjection(Vector2 on) {
+        return dot(this, on) / on.magnitude();
     }
 
     public static Vector2 lerp(Vector2 a, Vector2 b, float t) {

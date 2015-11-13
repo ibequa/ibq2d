@@ -40,6 +40,10 @@ public class Rect extends Shape {
         return height;
     }
 
+    public float getOuterCircleRadius() {
+        return (Vector2.subtract(getPosition(), vertices.get(0))).magnitude();
+    }
+
     private void calculateCoordinates() {
         float xMin = getPosition().getX() - width/2.0f;
         float xMax = xMin + width;

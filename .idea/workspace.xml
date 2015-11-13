@@ -2,67 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fa5ebcf-5aa1-4b76-acc8-85eff4f90f54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/IGameListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/testgame/Player.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Application.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Batch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/BoxCollider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Circle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/CircleCollider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Collider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/ContactDetection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/ContactListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Core.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Edge.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/GameListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/GameListenersList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Geometry.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/IContactListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/IGameListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Input.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Mathq.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Quadtree.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Rect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/RenderUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Shape.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Sprite.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/SpriteBatch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Texture.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Time.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Triangle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Vector2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/Window.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/GameListenersList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/IGameListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Player.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Quadtree.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Application.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Application.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Batch.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Batch.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/BoxCollider.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/physics/BoxCollider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Circle.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Circle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/CircleCollider.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/physics/CircleCollider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Collider.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/physics/Collider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/ContactDetection.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/physics/ContactDetection.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/ContactListener.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/physics/ContactListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Core.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Core.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Edge.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Edge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/GameListener.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/GameListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Geometry.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/IContactListener.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/physics/IContactListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Input.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Input.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Mathq.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Mathq.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Rect.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Rect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/RenderUtil.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/RenderUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Shape.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Sprite.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Sprite.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/SpriteBatch.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/SpriteBatch.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Texture.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Texture.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Time.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Time.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Triangle.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Triangle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Vector2.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Vector2.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/Window.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Window.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Geometry.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Geometry.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Vector2.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Vector2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE.md" afterPath="$PROJECT_DIR$/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Rect.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Rect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Vector2.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Vector2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testgame/Player.java" afterPath="$PROJECT_DIR$/src/testgame/Player.java" />
     </list>
     <ignored path="ibq2d.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/testgame/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64122134">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,12 +49,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Application.java">
+      <file leaf-file-name="Rect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Rect.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-              <folding />
+              <caret line="44" column="3" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
+              <folding>
+                <element signature="e#847#848#0" expanded="true" />
+                <element signature="e#876#877#0" expanded="true" />
+                <element signature="e#919#920#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Geometry.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5531136">
+              <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,9 +141,13 @@
         <option value="$PROJECT_DIR$/src/com/ibq2d/engine/Window.java" />
         <option value="$PROJECT_DIR$/src/com/ibq2d/engine/Geometry.java" />
         <option value="$PROJECT_DIR$/src/com/ibq2d/engine/Player.java" />
-        <option value="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java" />
         <option value="$PROJECT_DIR$/src/com/ibq2d/engine/core/Application.java" />
+        <option value="$PROJECT_DIR$/LICENSE.md" />
+        <option value="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Vector2.java" />
+        <option value="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java" />
+        <option value="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Rect.java" />
         <option value="$PROJECT_DIR$/src/testgame/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java" />
       </list>
     </option>
   </component>
@@ -350,6 +318,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibq2d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibq2d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="geometry" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -364,8 +354,24 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="Vecto&#9;FILE&#9;file:///Users/ilya/IdeaProjects/ibq2d/src/com/ibq2d/engine/Vector2.java" />
+    <property name="SearchEverywhereHistoryKey" value="vect&#9;FILE&#9;file:///Users/ilya/IdeaProjects/ibq2d/src/com/ibq2d/engine/geometry/Vector2.java&#10;Vecto&#9;FILE&#9;file:///Users/ilya/IdeaProjects/ibq2d/src/com/ibq2d/engine/Vector2.java" />
     <property name="FullScreen" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="156" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="950" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="156" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="950" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -730,19 +736,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270809" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270809" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1992966" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13481829" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14536929" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.8780774" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.8780774" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -772,9 +778,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="30" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -783,14 +792,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="130" column="20" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/testgame/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -923,13 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09693053">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Mathq.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17883755">
@@ -977,13 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/physics/ContactListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60178304">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Input.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25862068">
@@ -995,13 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.21551724">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.1637931">
-          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1026,31 +1006,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/physics/Collider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43965518">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Texture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3090909">
           <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Rect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8244275">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9694657">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1075,7 +1034,7 @@
         <state vertical-scroll-proportion="0.5496183">
           <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1104,33 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4274809">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/physics/ContactDetection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2977099">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding>
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Vector2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28854963">
-          <caret line="144" column="26" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Window.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2519084">
@@ -1139,18 +1071,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/physics/Collider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18320611">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5648855">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/physics/ContactDetection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2519084">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/physics/ContactListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6183206">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.045801528">
           <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Vector2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34375">
+          <caret line="138" column="41" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/core/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7183099">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding>
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1035#1036#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44366196">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/testgame/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64122134">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Rect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="3" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
+          <folding>
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5531136">
+          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
