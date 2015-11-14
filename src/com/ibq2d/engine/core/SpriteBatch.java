@@ -2,15 +2,16 @@ package com.ibq2d.engine.core;
 
 import static org.lwjgl.opengl.GL11.*;
 
-public class SpriteBatch implements Batch {
+public class SpriteBatch {
 
-    @Override
-    public void draw(Texture texture, float x, float y) {
+    public static void draw(Texture texture, float x, float y) {
         x += Application.originX;
         y += Application.originY;
 
         glPushMatrix();
         glLoadIdentity();
+
+        texture.bind();
 
         glTranslatef(x, y, 0);
 
@@ -23,13 +24,14 @@ public class SpriteBatch implements Batch {
         glPopMatrix();
     }
 
-    @Override
-    public void draw(Texture texture, float x, float y, float scaleX, float scaleY, float rotation) {
+    public static void draw(Texture texture, float x, float y, float scaleX, float scaleY, float rotation) {
         x += Application.originX;
         y += Application.originY;
 
         glPushMatrix();
         glLoadIdentity();
+
+        texture.bind();
 
         glTranslatef(x, y, 0);
         glRotatef(rotation, 0, 0, 1);

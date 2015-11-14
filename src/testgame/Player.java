@@ -7,6 +7,7 @@ import com.ibq2d.engine.physics.*;
 public class Player extends GameListener {
 
     Texture tex;
+    Texture circleTexture;
     Sprite spriteA;
     Sprite spriteB;
     Collider colA;
@@ -28,12 +29,10 @@ public class Player extends GameListener {
                 System.out.println("contacting");
             }
         });
-        colB = new BoxCollider(new Rect(spriteB), true, new ContactListener() {
-        });
-        spriteA.scaleXY(0.5f);
-        colA.shape.scale(0.5f, 0.5f);
-        spriteA.translateY(Application.HEIGHT/4 + 90);
-        colA.shape.translateY(Application.HEIGHT/4 + 90);
+        colB = new BoxCollider(new Rect(spriteB), true, new ContactListener() {});
+
+        spriteA.translateY(Application.HEIGHT/4);
+        colA.shape.translateY(Application.HEIGHT/4);
     }
 
     @Override
@@ -45,6 +44,8 @@ public class Player extends GameListener {
     @Override
     public void draw() {
         spriteA.draw(spriteBatch);
-        spriteB.draw(spriteBatch);
+        //spriteB.draw(spriteBatch);
+        GeometryBatch.draw((Rect) colA.shape);
+        //GeometryBatch.draw((Rect) colB.shape);
     }
 }

@@ -28,6 +28,7 @@ public final class Geometry {
         float rectY = rect.getPosition().getY();
         float subWidth = rect.getWidth()/2;
         float subHeight = rect.getHeight()/2;
+
         return isPointWithin(vec.getX(), rectX - subWidth, rectX + subWidth) &&
                 isPointWithin(vec.getY(), rectY - subHeight, rectY + subHeight);
     }
@@ -86,7 +87,6 @@ public final class Geometry {
             return false;
         Vector2 dir = Vector2.subtract(a.getPosition(), b.getPosition()).normalized();
         Vector2 outerPoint = Vector2.add(b.getPosition(), dir.multiplyBy(b.getRadius()));
-
         return isVectorInRect(outerPoint, a);
     }
 
@@ -103,9 +103,8 @@ public final class Geometry {
     public static boolean shapesOverlap(Shape a, Shape b) {
         if (a.getRotation() == 0 && b.getRotation() == 0)
            return shapesPrimitiveOverlap((Rect) a, (Rect) b);
-        else return false;
 
-      /*  for (int i = 0 ; i < a.vertices.size(); i++) {
+        for (int i = 0 ; i < a.vertices.size(); i++) {
             Edge edge = a.edges.get(i);
             Vector2 planeVec = Vector2.subtract(edge.getVec1(), edge.getVec0());
 
@@ -115,8 +114,7 @@ public final class Geometry {
             Vector2[] minMaxShapeA = getMinMax(projShapeA);
             Vector2[] minMaxShapeB = getMinMax(projShapeB);
 
-            //if (Vector2.overlap(minMaxShapeA[0], minMaxShapeA[1], minMaxShapeB[0], minMaxShapeB[1]))
-            if (!(minMaxShapeA[1].compareTo(minMaxShapeB[0]) < 0 || minMaxShapeA[0].compareTo(minMaxShapeB[1]) > 0))
+            if (Vector2.overlap(minMaxShapeA[0], minMaxShapeA[1], minMaxShapeB[0], minMaxShapeB[1]))
                 continue;
             else return false;
         }
@@ -130,12 +128,12 @@ public final class Geometry {
             Vector2[] minMaxShapeA = getMinMax(projShapeA);
             Vector2[] minMaxShapeB = getMinMax(projShapeB);
 
-            if (!(minMaxShapeA[1].compareTo(minMaxShapeB[0]) < 0 || minMaxShapeA[0].compareTo(minMaxShapeB[1]) > 0))
+            if (Vector2.overlap(minMaxShapeA[0], minMaxShapeA[1], minMaxShapeB[0], minMaxShapeB[1]))
                 continue;
             else return false;
         }
 
-        return true;*/
+        return true;
     }
 
     private static Vector2[] getMinMax(Vector2[] vectors) {

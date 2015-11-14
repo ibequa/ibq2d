@@ -90,7 +90,7 @@ public class Sprite {
         position.set(position.getX(), position.getY() + byY);
     }
 
-    public void draw(Batch batch) {
+    public void draw(SpriteBatch batch) {
         batch.draw(getTexture(), position.getX(), position.getY(), scale.getX(), scale.getY(), rotation);
     }
 }

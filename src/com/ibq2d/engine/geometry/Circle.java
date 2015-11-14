@@ -1,5 +1,7 @@
 package com.ibq2d.engine.geometry;
 
+import com.ibq2d.engine.core.Sprite;
+
 public class Circle extends Shape {
     private float radius;
     private float diameter;
@@ -17,6 +19,14 @@ public class Circle extends Shape {
 
         diameter = radius * 2.0f;
         vertices.add(getPosition());
+    }
+
+    public Circle(Sprite sprite) {
+        super(sprite.getPosition());
+        this.radius = sprite.getWidth()/2;
+        this.diameter = radius * 2.0f;
+
+        vertices.add(sprite.getPosition());
     }
 
     public float getRadius() {

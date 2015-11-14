@@ -41,21 +41,24 @@ public abstract class Shape {
     }
 
     public void scale(float byX, float byY) {
+        Vector2 oldPos = getPosition();
+        translate(new Vector2(-oldPos.getX(), -oldPos.getY()));
         for(int i = 0; i < vertices.size(); i++) {
             Vector2 vertex = vertices.get(i);
-            vertex.set((vertex.getX() - position.getX()) * byX + position.getX(), ((vertex.getY() - position.getY()) * byY + position.getY()));
+            vertex.set(vertex.getX() * byX, vertex.getY() * byY);
         }
+        translate(oldPos);
     }
     public void scaleX(float byX) {
         for (int i = 0; i < vertices.size(); i++) {
             Vector2 vertex = vertices.get(i);
-            vertex.setX((vertex.getX() - position.getX()) * byX + position.getX());
+            vertex.setX(vertex.getX() * byX);
         }
     }
     public void scaleY(float byY) {
         for (int i = 0; i < vertices.size(); i++) {
             Vector2 vertex = vertices.get(i);
-            vertex.setY((vertex.getY() - position.getY()) * byY + position.getY());
+            vertex.setY(vertex.getY() * byY);
         }
     }
 
@@ -67,17 +70,19 @@ public abstract class Shape {
 
     public void translateX(float byX) {
         for (int i = 0; i < vertices.size(); i++)
-            vertices.get(i).set(new Vector2(vertices.get(i).getX() + byX, vertices.get(i).getY()));
+            vertices.get(i).set(vertices.get(i).getX() + byX, vertices.get(i).getY());
         position = new Vector2(position.getX() + byX, position.getY());
     }
 
     public void translateY(float byY) {
         for (int i = 0; i < vertices.size(); i++)
-            vertices.get(i).set(new Vector2(vertices.get(i).getX(), vertices.get(i).getY() + byY));
+            vertices.get(i).set(vertices.get(i).getX(), vertices.get(i).getY() + byY);
         position = new Vector2(position.getX(), position.getY() + byY);
     }
 
     public void rotate(double degree) {
+        Vector2 oldPos = getPosition();
+        translate(new Vector2(-oldPos.getX(), -oldPos.getY()));
         this.rotation = ((float) degree + getRotation()) % 360;
 
         degree = Math.toRadians(degree);
@@ -85,5 +90,6 @@ public abstract class Shape {
             vertices.get(i).set(new Vector2((float) (vertices.get(i).getX() * Math.cos(degree) - vertices.get(i).getY() * Math.sin(degree)),
                     (float) (vertices.get(i).getX() * Math.sin(degree) + vertices.get(i).getY() * Math.cos(degree))));
         }
+        translate(oldPos);
     }
 }
