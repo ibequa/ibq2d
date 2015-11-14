@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fa5ebcf-5aa1-4b76-acc8-85eff4f90f54" name="Default" comment="major bug fixes.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/textures/circleTexture.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/GeometryBatch.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Batch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Batch.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/RenderUtil.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/RenderUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Sprite.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Sprite.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/SpriteBatch.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/SpriteBatch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Circle.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Circle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Geometry.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Geometry.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Rect.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Rect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player$1.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player$2.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player.class" afterPath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player.class" />
+    <list default="true" id="4fa5ebcf-5aa1-4b76-acc8-85eff4f90f54" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Application.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Core.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/GameListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/IGameListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Input.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Mathq.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/RenderUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Sprite.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/SpriteBatch.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Texture.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Time.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/core/Window.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Circle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Edge.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Geometry.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Rect.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Shape.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Triangle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/geometry/Vector2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/physics/BoxCollider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/physics/CircleCollider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/physics/Collider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/physics/ContactDetection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/physics/ContactListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/com/ibq2d/engine/physics/IContactListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ibq2d/testgame/Player.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/core/RenderUtil.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/RenderUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Sprite.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/Sprite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/core/SpriteBatch.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/core/SpriteBatch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Circle.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Circle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Geometry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java" afterPath="$PROJECT_DIR$/src/com/ibq2d/engine/geometry/Shape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testgame/Player.java" afterPath="$PROJECT_DIR$/src/testgame/Player.java" />
     </list>
     <ignored path="ibq2d.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,8 +60,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/testgame/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89514565">
-              <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.20747423">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -301,46 +309,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibq2d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibq2d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibq2d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibq2d" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -732,7 +700,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447450042820</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="major bug fixes.">
+      <created>1447461789492</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1447461789492</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -750,7 +724,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32462686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32462686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -758,7 +732,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20895523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14536929" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.8780774" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17291667" sideWeight="0.8780774" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1190,8 +1164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/testgame/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89514565">
-          <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.20747423">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
