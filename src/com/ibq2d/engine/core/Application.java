@@ -19,5 +19,5 @@ public final class Application {
     public static final int[] horizontalAxis = { Keyboard.KEY_A, Keyboard.KEY_D };
     public static final int[] verticalAxis = { Keyboard.KEY_S, Keyboard.KEY_W };
 
-    public static IGameListener gameListeners[] = new IGameListener[] { new Player(), new Ball(), new Edges() };
+    public static IGameListener gameListeners[] = new IGameListener[] { new Player(), new AIPlayer(), new Ball(), new Edges() };
 }

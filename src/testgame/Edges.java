@@ -12,18 +12,18 @@ public class Edges extends GameListener {
     @Override
     public void start() {
         leftEdge = new EdgeCollider(new Edge(new Vector2(-Application.WIDTH / 2, -Application.HEIGHT / 2),
-                new Vector2(-Application.WIDTH / 2, Application.HEIGHT / 2)), true, new ContactListener() {
+                new Vector2(-Application.WIDTH / 2, Application.HEIGHT / 2)), false, new ContactListener() {
             @Override
-            public void onTriggerEnter(Collider collider) {
+            public void onContactEnter(Collider collider) {
                 if (collider.tag == "Ball")
                     bounceBallBack(Vector2.right(), collider.rigidBody.getVelocity());
             }
         });
 
         rightEdge = new EdgeCollider(new Edge(new Vector2(Application.WIDTH / 2, -Application.HEIGHT / 2),
-                    new Vector2(Application.WIDTH / 2, Application.HEIGHT / 2)), true, new ContactListener() {
+                    new Vector2(Application.WIDTH / 2, Application.HEIGHT / 2)), false, new ContactListener() {
             @Override
-            public void onTriggerEnter(Collider collider) {
+            public void onContactEnter(Collider collider) {
                 if (collider.tag == "Ball")
                     bounceBallBack(Vector2.left(), collider.rigidBody.getVelocity());
             }

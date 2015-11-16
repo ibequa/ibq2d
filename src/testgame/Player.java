@@ -20,8 +20,14 @@ public class Player extends GameListener {
         texture = new Texture("player.png");
         spriteBatch = new SpriteBatch();
         sprite = new Sprite(texture);
-        collider = new BoxCollider(new Rect(sprite), true, new ContactListener() {
+        collider = new BoxCollider(new Rect(sprite), false, new ContactListener() {
+            @Override
+            public void onContactEnter(Collider collider) {
+                Vector2 ballVelocity = collider.rigidBody.getVelocity();
+                ballVelocity.set(ballVelocity.getX()*translation*0.2f, -ballVelocity.getY());
+            }
         });
+        collider.tag = "Platform";
 
         sprite.translateY(-Application.HEIGHT / 2 + sprite.getWidth() / 2 - 40);
         collider.shape.translateY(-Application.HEIGHT / 2 + sprite.getWidth() / 2 - 40);

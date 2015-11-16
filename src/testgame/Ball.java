@@ -12,20 +12,25 @@ public class Ball extends GameListener {
     RigidBody rigidBody;
     SpriteBatch spriteBatch;
 
+    public static Vector2 velocity;
+
     @Override
     public void start() {
         texture = new Texture("ball.png");
         spriteBatch = new SpriteBatch();
         sprite = new Sprite(texture);
 
-        collider = new CircleCollider(new Circle(sprite), true, new ContactListener() {});
+        collider = new CircleCollider(new Circle(sprite), false, new ContactListener() {});
         collider.tag = "Ball";
-        rigidBody = new RigidBody(new Vector2(1, -0.4f).multiplyBy(9), collider);
+        rigidBody = new RigidBody(new Vector2(1, 0.3f).multiplyBy(9), collider);
+
+        velocity = rigidBody.getVelocity();
     }
 
     @Override
     public void update() {
         rigidBody.update();
+        velocity = rigidBody.getVelocity();
     }
 
     @Override
