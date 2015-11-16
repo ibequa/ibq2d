@@ -40,6 +40,16 @@ public abstract class Shape {
         this.position = newPosition;
     }
 
+    public void setX(float x) {
+        translateX(x - getPosition().getX());
+        this.position.setX(x);
+    }
+
+    public void setY(float y) {
+        translateY(y - getPosition().getY());
+        this.position.setY(y);
+    }
+
     public void scale(float byX, float byY) {
         Vector2 oldPos = getPosition();
         translate(new Vector2(-oldPos.getX(), -oldPos.getY()));

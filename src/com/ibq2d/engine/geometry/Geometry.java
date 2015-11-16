@@ -96,14 +96,17 @@ public final class Geometry {
         return (distance <= (a.getRadius() + b.getRadius()));
     }
 
-    public static boolean shapesOverlap(Circle a, Rect b) {
-        return shapesOverlap(b, a);
+    public static boolean shapesOverlap(Edge a, Circle b) {
+        return a.overlap(b);
     }
 
-    public static boolean shapesOverlap(Shape a, Shape b) {
-        if (a.getRotation() == 0 && b.getRotation() == 0)
-           return shapesPrimitiveOverlap((Rect) a, (Rect) b);
+    public static boolean shapesOverlap(Rect a, Edge b) {return false; }
 
+    public static boolean shapesOverlap(Rect a, Rect b) {
+        if (a.getRotation() == 0 && b.getRotation() == 0)
+           return shapesPrimitiveOverlap(a, b);
+        else return  false;
+/*
         for (int i = 0 ; i < a.vertices.size(); i++) {
             Edge edge = a.edges.get(i);
             Vector2 planeVec = Vector2.subtract(edge.getVec1(), edge.getVec0());
@@ -133,7 +136,7 @@ public final class Geometry {
             else return false;
         }
 
-        return true;
+        return true; */
     }
 
     private static Vector2[] getMinMax(Vector2[] vectors) {

@@ -6,46 +6,39 @@ import com.ibq2d.engine.physics.*;
 
 public class Player extends GameListener {
 
-    Texture tex;
-    Texture circleTexture;
-    Sprite spriteA;
-    Sprite spriteB;
-    Collider colA;
-    Collider colB;
+    Texture texture;
+    Sprite sprite;
+    Collider collider;
     SpriteBatch spriteBatch;
 
-    float speed = 5;
+    float speed = 8;
+    float translation;
 
     @Override
     public void start() {
-        tex = new Texture("testTexture.png");
+
+        texture = new Texture("player.png");
         spriteBatch = new SpriteBatch();
-        spriteA = new Sprite(tex);
-        spriteB = new Sprite(tex);
-
-        colA = new BoxCollider(new Rect(spriteA), true, new ContactListener() {
-            @Override
-            public void onTriggerStay(Collider collider) {
-                System.out.println("contacting");
-            }
+        sprite = new Sprite(texture);
+        collider = new BoxCollider(new Rect(sprite), true, new ContactListener() {
         });
-        colB = new BoxCollider(new Rect(spriteB), true, new ContactListener() {});
 
-        spriteA.translateY(Application.HEIGHT/4);
-        colA.shape.translateY(Application.HEIGHT/4);
+        sprite.translateY(-Application.HEIGHT / 2 + sprite.getWidth() / 2 - 40);
+        collider.shape.translateY(-Application.HEIGHT / 2 + sprite.getWidth() / 2 - 40);
     }
 
     @Override
     public void update() {
-        spriteA.translate(new Vector2(Input.getHorizontalAxis() * speed, Input.getVerticalAxis() * speed));
-        colA.shape.translate(new Vector2(Input.getHorizontalAxis() * speed, Input.getVerticalAxis() * speed));
-   }
+        translation = Input.getHorizontalAxis() * speed;
+        sprite.translateX(translation);
+        collider.shape.translateX(translation);
+
+        sprite.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
+        collider.shape.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
+    }
 
     @Override
     public void draw() {
-        spriteA.draw(spriteBatch);
-        //spriteB.draw(spriteBatch);
-        GeometryBatch.draw((Rect) colA.shape);
-        //GeometryBatch.draw((Rect) colB.shape);
+        sprite.draw(spriteBatch);
     }
 }

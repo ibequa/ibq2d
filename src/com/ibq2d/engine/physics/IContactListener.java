@@ -6,4 +6,5 @@ public interface IContactListener {
     void onTriggerEnter(Collider collider);
     void onTriggerExit(Collider collider);
     void onTriggerStay(Collider collider);
+    void onContactStay(Collider collider);
 }

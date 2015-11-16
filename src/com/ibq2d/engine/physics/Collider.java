@@ -9,7 +9,10 @@ public class Collider {
     public Shape shape;
     public ContactListener contactListener;
 
+    public RigidBody rigidBody;
+
     public final int id;
+    public String tag;
 
     public Collider(Shape shape, ContactListener contactListener) {
         this.shape = shape;

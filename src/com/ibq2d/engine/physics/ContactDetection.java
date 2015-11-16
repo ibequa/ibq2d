@@ -1,15 +1,14 @@
 package com.ibq2d.engine.physics;
 
-import com.ibq2d.engine.geometry.Circle;
-import com.ibq2d.engine.geometry.Geometry;
-import com.ibq2d.engine.geometry.Rect;
-import com.ibq2d.engine.geometry.Shape;
+import com.ibq2d.engine.geometry.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ContactDetection {
 
     private static ArrayList<Collider> listeners = new ArrayList<Collider>();
+    private static HashMap<Collider, Collider> contactingWith = new HashMap<>();
 
     protected static void addListener(Collider listener) {
         listeners.add(listener);
@@ -21,20 +20,35 @@ public class ContactDetection {
             for (int j = 0; j < listeners.size(); j++) {
                 if (i == j)
                     continue;
-                if (overlap(x, listeners.get(j)))
-                        manageContactCallbacks(x, listeners.get(j));
+                Collider y = listeners.get(j);
+                if (x.enabled && y.enabled) {
+                  if (overlap(x, y))
+                      manageContactCallbacks(x, y);
+                  else if (contactingWith.get(x) == y) {
+                      contactingWith.remove(x);
+                      if (x.isTrigger || y.isTrigger)
+                          x.contactListener.onTriggerExit(y);
+                      else x.contactListener.onContactExit(y);
+                  }
+                }
             }
         }
     }
 
     private static void manageContactCallbacks(Collider a, Collider b) {
-        // if a or b is trigger operate on onTrigger...
-        // non of them triggers operate on onContact...
         if (a.isTrigger || b.isTrigger) {
-                a.contactListener.onTriggerStay(b);
-                b.contactListener.onTriggerStay(a);
+            a.contactListener.onTriggerStay(b);
+            if (!(contactingWith.get(a) == b)) {
+                contactingWith.put(a, b);
+                a.contactListener.onTriggerEnter(b);
             }
+        }
         else {
+            a.contactListener.onContactStay(b);
+            if (!(contactingWith.get(a) == b)) {
+                contactingWith.put(a, b);
+                a.contactListener.onContactEnter(b);
+            }
         }
     }
 
@@ -49,10 +63,25 @@ public class ContactDetection {
     private static boolean shapesOverlapHandler(Shape a, Shape b) {
         if (a.getClass() == Circle.class && b.getClass() == Circle.class)
             return Geometry.shapesOverlap((Circle) a, (Circle) b);
+
         else if (a.getClass() == Rect.class && b.getClass() == Circle.class)
             return Geometry.shapesOverlap((Rect) a, (Circle) b);
+
         else if (a.getClass() == Circle.class && b.getClass() == Rect.class)
-            return Geometry.shapesOverlap((Circle) a, (Rect) b);
-        else return Geometry.shapesOverlap(a, b);
+            return Geometry.shapesOverlap((Rect) b, (Circle) a);
+
+        else if (a.getClass() == Edge.class && b.getClass() == Circle.class)
+            return Geometry.shapesOverlap((Edge) a, (Circle) b);
+
+        else if (a.getClass() == Circle.class && b.getClass() == Edge.class)
+            return Geometry.shapesOverlap((Edge) b, (Circle) a);
+
+        else if (a.getClass() == Rect.class && b.getClass() == Edge.class)
+            return Geometry.shapesOverlap((Rect) a, (Edge) b);
+        else if (a.getClass() == Edge.class && b.getClass() == Rect.class)
+            return Geometry.shapesOverlap((Rect) b, (Edge) a);
+
+
+        else return false;
     }
 }
