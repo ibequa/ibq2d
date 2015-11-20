@@ -11,7 +11,7 @@ import java.io.InputStream;
 public class Text {
 
     private String text;
-    private TrueTypeFont font;
+    public TrueTypeFont font;
     private Color color;
 
     private Vector2 position;
@@ -86,10 +86,10 @@ public class Text {
     }
 
     public void draw(Vector2 position, Color color) {
-        font.drawString(position.getX() + Application.originX, position.getY() + Application.originY, text, color);
+        font.drawString(position.getX() + Application.originX - font.getWidth(text)/2, position.getY() + Application.originY, text, color);
     }
 
     public void draw() {
-        font.drawString(position.getX() + Application.originX, position.getY() + Application.originY, text, color);
+        font.drawString(position.getX() + Application.originX - font.getWidth(text)/2, position.getY() + Application.originY - getHeight()/2, text, color);
     }
 }

@@ -1,9 +1,6 @@
 package testgame;
 
 import com.ibq2d.engine.core.*;
-import org.newdawn.slick.opengl.TextureImpl;
-
-import static org.lwjgl.opengl.GL11.*;
 
 public class Score extends GameListener{
 
