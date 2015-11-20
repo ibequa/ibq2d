@@ -7,13 +7,23 @@ public final class RenderUtil {
 
     protected static void init() {
         // projection init
+        glViewport(0, 0, Application.WIDTH, Application.HEIGHT);
+        glMatrixMode(GL_MODELVIEW);
+
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
         glOrtho(0, Application.WIDTH, 0, Application.HEIGHT, -1, 1);
+       //glOrtho(0, Application.WIDTH, Application.HEIGHT, 0, -1, 1);
         glMatrixMode(GL_MODELVIEW);
 
         // set buffers defaults
         glClearColor(0, 0, 0, 0);
+        glClearDepth(1);
+
+        glEnable(GL_TEXTURE_2D);
+
+        // disable lighting
+        glDisable(GL_LIGHTING);
 
         // enable face culling, clockwise;
         glEnable(GL_CULL_FACE);
@@ -23,8 +33,6 @@ public final class RenderUtil {
         // disable depth buffer
         glDisable(GL_DEPTH_TEST);
 
-        // enable textures
-        glEnable(GL_TEXTURE_2D);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     }

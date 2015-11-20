@@ -37,9 +37,15 @@ public class AIPlayer extends GameListener{
     @Override
     public void update() {
         if (Ball.velocity.getY() > 0) {
-            float x = Ball.velocity.getX() / Ball.velocity.getY();
-            sprite.setX(x);
-            collider.shape.setX(x);
+            Vector2 p0 = Ball.position;
+            Vector2 p1 = Vector2.add(Ball.position, Vector2.one());
+
+            float k = (p0.getY() - p1.getY())/(p0.getX() - p1.getX());
+            float m = p1.getY() - k * p1.getX();
+            float x = (sprite.getPosition().getY() - m) / k;
+
+            sprite.setX(Math.min(x, Application.WIDTH/2));
+            collider.shape.setX(Math.min(x, Application.WIDTH/2));
         }
     }
 

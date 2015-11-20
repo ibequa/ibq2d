@@ -1,12 +1,11 @@
 package com.ibq2d.engine.core;
 
-import com.ibq2d.engine.core.Application;
-import com.ibq2d.engine.core.IGameListener;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
 public final class Window {
+
     private Window() {}
 
     public static void createWindow(int width, int height, String title) {

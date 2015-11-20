@@ -24,7 +24,9 @@ public class Player extends GameListener {
             @Override
             public void onContactEnter(Collider collider) {
                 Vector2 ballVelocity = collider.rigidBody.getVelocity();
-                ballVelocity.set(ballVelocity.getX()*translation*0.2f, -ballVelocity.getY());
+                float coef = translation * 0.8f;
+                if (coef == 0) coef = 1;
+                ballVelocity.set(ballVelocity.getX()+coef, -ballVelocity.getY()*Math.abs(coef)*0.5f);
             }
         });
         collider.tag = "Platform";

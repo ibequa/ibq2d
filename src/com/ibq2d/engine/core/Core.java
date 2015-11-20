@@ -74,7 +74,7 @@ public class Core {
         }
     }
 
-    private void render() { Window.render(); }
+    private void render() { Window.render();}
 
     private void stop() {
         if (!isRunning)

@@ -12,7 +12,10 @@ public class Ball extends GameListener {
     RigidBody rigidBody;
     SpriteBatch spriteBatch;
 
+    float maxSpeed = 6;
+
     public static Vector2 velocity;
+    public static Vector2 position;
 
     @Override
     public void start() {
@@ -22,15 +25,19 @@ public class Ball extends GameListener {
 
         collider = new CircleCollider(new Circle(sprite), false, new ContactListener() {});
         collider.tag = "Ball";
-        rigidBody = new RigidBody(new Vector2(1, 0.3f).multiplyBy(9), collider);
+        rigidBody = new RigidBody(new Vector2(-1f, 1f).multiplyBy(9), collider);
 
         velocity = rigidBody.getVelocity();
+        position = sprite.getPosition();
     }
 
     @Override
     public void update() {
         rigidBody.update();
         velocity = rigidBody.getVelocity();
+        position = sprite.getPosition();
+
+        rigidBody.getVelocity().setY(Math.min(maxSpeed, rigidBody.getVelocity().getY()));
     }
 
     @Override
