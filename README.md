@@ -2,7 +2,8 @@
 
 2d game development framework <p>Currently has: </p> 
 - input system (keyboard only)
-- collision detection for convex boides(using hyperplane separation theorem)
+- collision detection for primitives
 - game state callbacks
 - basic geometry
 - texture loading
+- text support, custom fonts
