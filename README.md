@@ -8,3 +8,4 @@
 - texture loading
 - text support, custom fonts
 - scene support
+inspired by unity3d, libgdx
