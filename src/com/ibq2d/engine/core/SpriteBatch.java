@@ -5,8 +5,7 @@ import static org.lwjgl.opengl.GL11.*;
 public class SpriteBatch {
 
     public static void draw(Texture texture, float x, float y) {
-        x += Application.originX;
-        y += Application.originY;
+        y *= -1;
 
         glPushMatrix();
         glLoadIdentity();

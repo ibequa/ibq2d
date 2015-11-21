@@ -12,7 +12,7 @@ public class GeometryBatch {
 
         glBegin(GL_QUADS);
         for (int i = 0; i < rect.vertices.size(); i++)
-            glVertex2f(rect.vertices.get(i).getX() + Application.originX, rect.vertices.get(i).getY() + Application.originY);
+            glVertex2f(rect.vertices.get(i).getX(), rect.vertices.get(i).getY());
         glEnd();
         glPopMatrix();
     }

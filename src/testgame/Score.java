@@ -5,6 +5,7 @@ import com.ibq2d.engine.core.*;
 public class Score extends GameListener{
 
     Text score;
+    private int count;
 
     @Override
     public void awake() {
