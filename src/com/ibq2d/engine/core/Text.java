@@ -82,14 +82,14 @@ public class Text {
     }
 
     public void draw(Vector2 position) {
-        font.drawString(position.getX() + Application.HALF_WIDTH, position.getY() + Application.HALF_HEIGHT, text, Color.white);
+        font.drawString(position.getX() - font.getWidth(text)/2, position.getY() - getHeight()/2, text, Color.white);
     }
 
     public void draw(Vector2 position, Color color) {
-        font.drawString(position.getX() + Application.originX - font.getWidth(text)/2, position.getY() + Application.originY, text, color);
+        font.drawString(position.getX() - font.getWidth(text)/2, position.getY(), text, color);
     }
 
     public void draw() {
-        font.drawString(position.getX() + Application.originX - font.getWidth(text)/2, position.getY() + Application.originY - getHeight()/2, text, color);
+        font.drawString(position.getX() - font.getWidth(text)/2, position.getY() - getHeight()/2, text, color);
     }
 }

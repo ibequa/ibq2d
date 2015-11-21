@@ -25,8 +25,7 @@ public class SpriteBatch {
     }
 
     public static void draw(Texture texture, float x, float y, float scaleX, float scaleY, float rotation) {
-        x += Application.originX;
-        y += Application.originY;
+        y *= -1;
 
         glPushMatrix();
         glLoadIdentity();
