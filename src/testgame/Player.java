@@ -15,7 +15,7 @@ public class Player extends GameListener {
     float translation;
 
     @Override
-    public void start() {
+    public void awake() {
 
         texture = new Texture("player.png");
         spriteBatch = new SpriteBatch();

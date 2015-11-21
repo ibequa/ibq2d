@@ -18,14 +18,14 @@ public class Ball extends GameListener {
     public static Vector2 position;
 
     @Override
-    public void start() {
+    public void awake() {
         texture = new Texture("ball.png");
         spriteBatch = new SpriteBatch();
         sprite = new Sprite(texture);
 
         collider = new CircleCollider(new Circle(sprite), false, new ContactListener() {});
         collider.tag = "Ball";
-        rigidBody = new RigidBody(new Vector2(-1f, 1f).multiplyBy(9), collider);
+        rigidBody = new RigidBody(new Vector2(-1f, 0.5f).multiplyBy(9), collider);
 
         velocity = rigidBody.getVelocity();
         position = sprite.getPosition();

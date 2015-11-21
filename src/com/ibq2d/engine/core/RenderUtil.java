@@ -12,8 +12,7 @@ public final class RenderUtil {
 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        glOrtho(0, Application.WIDTH, Application.HEIGHT, 0, 1, -1);
-        //glOrtho(-Application.HALF_WIDTH, Application.HALF_WIDTH, -Application.HALF_HEIGHT, Application.HALF_HEIGHT, 1, -1);
+        glOrtho(0, Application.WIDTH, 0, Application.HEIGHT, 1, -1);
         glMatrixMode(GL_MODELVIEW);
 
         // set buffers defaults
@@ -28,7 +27,7 @@ public final class RenderUtil {
         // enable face culling, clockwise;
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
-        glFrontFace(GL_CCW);
+        glFrontFace(GL_CW);
 
         // disable depth buffer
         glDisable(GL_DEPTH_TEST);

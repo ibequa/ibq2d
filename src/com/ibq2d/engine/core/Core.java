@@ -5,13 +5,14 @@ import com.ibq2d.engine.physics.ContactDetection;
 public class Core {
 
     private boolean isRunning;
+    private Scene runningScene;
 
     public static void main(String[] args) {
         Window.createWindow(Application.WIDTH, Application.HEIGHT, Application.APP_NAME);
 
         Core game = new Core();
 
-        game.start();
+        game.awake();
     }
 
 
@@ -19,14 +20,14 @@ public class Core {
         isRunning = false;
     }
 
-    protected void start() {
+    protected void awake() {
         if (isRunning)
             return;
 
         RenderUtil.init();
 
-        for (IGameListener gameListener : Application.gameListeners)
-            gameListener.start();
+        SceneManager.setCurrentScene(SceneManager.getScene(0));
+        SceneManager.getCurrentScene().initializeScene();
 
         run();
     }
@@ -58,11 +59,21 @@ public class Core {
                     stop();
                     return;
                 }
+
+                if (runningScene != SceneManager.getCurrentScene()) {
+                    if (runningScene != null)
+                        runningScene.destroy();
+                    runningScene = SceneManager.getCurrentScene();
+
+                    runningScene.initializeScene();
+                    runningScene.awake();
+                    runningScene.start();
+                }
+
                 Input.updateBuffer();
                 ContactDetection.checkCollisions();
 
-                for (IGameListener gameListener : Application.gameListeners)
-                    gameListener.update();
+                runningScene.update();
 
                 if (render) {
                     RenderUtil.clearScreen();

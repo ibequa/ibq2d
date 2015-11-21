@@ -10,7 +10,7 @@ public class Edges extends GameListener {
     EdgeCollider leftEdge;
 
     @Override
-    public void start() {
+    public void awake() {
         leftEdge = new EdgeCollider(new Edge(new Vector2(-Application.WIDTH / 2, -Application.HEIGHT / 2),
                 new Vector2(-Application.WIDTH / 2, Application.HEIGHT / 2)), false, new ContactListener() {
             @Override

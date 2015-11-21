@@ -21,8 +21,7 @@ public final class Window {
     }
 
     public static void render() {
-        for (IGameListener gml : Application.gameListeners)
-            gml.draw();
+        SceneManager.getCurrentScene().draw();
 
         Display.update();
     }

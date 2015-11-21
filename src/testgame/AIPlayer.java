@@ -14,7 +14,7 @@ public class AIPlayer extends GameListener{
     float translation;
 
     @Override
-    public void start() {
+    public void awake() {
 
         texture = new Texture("aiplayer.png");
         spriteBatch = new SpriteBatch();
