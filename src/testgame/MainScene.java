@@ -8,8 +8,6 @@ public class MainScene extends Scene {
 
     @Override
     public void initializeScene() {
-        name = "MainScene";
-
         gameListeners = new ArrayList<IGameListener>();
 
         gameListeners.add(new Player());

@@ -27,7 +27,11 @@ public class Core {
         RenderUtil.init();
 
         SceneManager.setCurrentScene(SceneManager.getScene(0));
-        SceneManager.getCurrentScene().initializeScene();
+        runningScene = SceneManager.getCurrentScene();
+
+        runningScene.initializeScene();
+        runningScene.awake();
+        runningScene.start();
 
         run();
     }
@@ -60,27 +64,26 @@ public class Core {
                     return;
                 }
 
-                if (runningScene != SceneManager.getCurrentScene()) {
-                    if (runningScene != null)
-                        runningScene.destroy();
-                    runningScene = SceneManager.getCurrentScene();
-
-                    runningScene.initializeScene();
-                    runningScene.awake();
-                    runningScene.start();
-                }
-
                 Input.updateBuffer();
                 ContactDetection.checkCollisions();
 
                 runningScene.update();
 
-                if (render) {
-                    RenderUtil.clearScreen();
-                    render();
+                if (runningScene != SceneManager.getCurrentScene()) {
+                    if (runningScene != null)
+                        runningScene.destroy();
+                    runningScene = SceneManager.getCurrentScene();
+                    runningScene.initializeScene();
+                    runningScene.awake();
+                    runningScene.start();
                 }
 
                 Time.deltaTime = elapsedTime;
+            }
+
+            if (render) {
+                RenderUtil.clearScreen();
+                render();
             }
         }
     }

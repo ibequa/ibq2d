@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public abstract class Scene implements IGameListener {
 
     public ArrayList<IGameListener> gameListeners;
-    public String name;
 
     public abstract void initializeScene();
 

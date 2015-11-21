@@ -18,9 +18,13 @@ public final class SceneManager {
     }
 
     public static Scene getScene(String name) {
-        for (Scene scene : Application.scenes)
-            if (scene.name == name)
+        String nameUnformated, nameFormated;
+        for (Scene scene : Application.scenes) {
+            nameUnformated = scene.getClass().getName();
+            nameFormated = nameUnformated.substring(nameUnformated.lastIndexOf(".") + 1);
+            if (nameFormated.equals(name))
                 return scene;
+        }
         return null;
     }
 }

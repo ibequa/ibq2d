@@ -1,10 +1,8 @@
 package com.ibq2d.engine.core;
 
-import com.ibq2d.engine.core.IGameListener;
-
 public abstract class GameListener implements IGameListener {
 
-    boolean enabled;
+    public boolean enabled;
 
     @Override
     public void awake() {
