@@ -9,4 +9,4 @@
 - text support, custom fonts
 - scene support
 <hr>
-inspired by unity3d, libgdx
+inspired by Unity3D and LibGDX
