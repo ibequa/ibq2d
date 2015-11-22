@@ -15,7 +15,7 @@ public final class Application {
     public static final float originX = WIDTH/2;
     public static final float originY = HEIGHT/2;
 
-    public static final String APP_NAME = "ibq2d";
+    public static final String APP_NAME = "ibq2d: Pong";
 
     public static final int targetFrameRate = 60;
 
