@@ -4,9 +4,14 @@ import java.util.ArrayList;
 
 public abstract class Scene implements IGameListener {
 
-    public ArrayList<IGameListener> gameListeners;
+    public ArrayList<IGameListener> gameListeners = new ArrayList<>();
 
     public abstract void initializeScene();
+
+    public void onInitializeScene() {
+        if (gameListeners.isEmpty())
+            initializeScene();
+    }
 
     @Override
     public void awake() {
@@ -24,6 +29,7 @@ public abstract class Scene implements IGameListener {
     @Override
     public void update() {
         for (IGameListener gameListener : gameListeners)
+        if (gameListener.isEnabled())
             gameListener.update();
     }
 
@@ -37,6 +43,8 @@ public abstract class Scene implements IGameListener {
     public void destroy() {
         for (IGameListener gameListener : gameListeners)
             gameListener.destroy();
+
+        gameListeners.clear();
     }
 
     @Override

@@ -13,6 +13,13 @@ public final class SceneManager {
         return currentScene;
     }
 
+    public static int getCurrentSceneIndex() {
+        for (int i = 0; i < Application.scenes.length; i++)
+            if (currentScene.equals(Application.scenes[i]))
+                return i;
+        return -1;
+    }
+
     public static Scene getScene(int index) {
         return (index < Application.scenes.length) ? Application.scenes[index] : null;
     }
@@ -26,5 +33,9 @@ public final class SceneManager {
                 return scene;
         }
         return null;
+    }
+
+    public static void restart() {
+        Core.onRestart = getCurrentSceneIndex();
     }
 }

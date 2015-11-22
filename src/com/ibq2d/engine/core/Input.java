@@ -1,7 +1,10 @@
 package com.ibq2d.engine.core;
 
 import com.ibq2d.engine.core.Application;
+import com.ibq2d.engine.geometry.Vector2;
+import javafx.scene.input.MouseButton;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 
 import java.util.HashSet;
 
@@ -10,6 +13,9 @@ public final class Input {
 
     private static HashSet<Integer> pressedKeys = new HashSet<Integer>();
     private static HashSet<Integer> releasedKeys = new HashSet<Integer>();
+
+    private static HashSet<Integer> pressedMouseBt = new HashSet<>();
+    private static HashSet<Integer> releasedMouseBt = new HashSet<>();
 
     private static void updateKeyBuffer(int keyCode) {
         if (Keyboard.next()) {
@@ -20,7 +26,17 @@ public final class Input {
         }
     }
 
-    protected static void updateBuffer() { pressedKeys.clear(); releasedKeys.clear(); }
+    private static void updateMouseBuffer(int mouseButton) {
+        if (Mouse.next()) {
+            if (Mouse.getEventButtonState())
+                pressedMouseBt.add(Mouse.getEventButton());
+            else
+                releasedMouseBt.add(Mouse.getEventButton());
+
+        }
+    }
+
+    protected static void updateBuffer() { pressedKeys.clear(); releasedKeys.clear(); releasedMouseBt.clear(); pressedMouseBt.clear(); }
 
     public static boolean getKey(int keyCode) {
         return Keyboard.isKeyDown(keyCode);
@@ -42,5 +58,34 @@ public final class Input {
 
     public static int getVerticalAxis() {
         return getKey(Application.verticalAxis[0]) ? -1 : (getKey(Application.verticalAxis[1]) ? 1 : 0);
+    }
+
+    public static boolean getMouseButton(int mouseButton) {
+        return (Mouse.isButtonDown(mouseButton));
+    }
+
+    public static boolean getMouseButtonDown(int mouseButton) {
+        updateMouseBuffer(mouseButton);
+        return pressedMouseBt.contains(mouseButton);
+    }
+
+    public static boolean getMouseButtonUp(int mouseButton) {
+        updateMouseBuffer(mouseButton);
+        return releasedMouseBt.contains(mouseButton);
+    }
+
+    public static Vector2 getMousePosition() {
+        float x = Mouse.getX() - Application.originX;
+        float y = Mouse.getY() - Application.originY;
+
+        return new Vector2(x,y);
+    }
+
+    public static float getMousePositionX() {
+        return Mouse.getX() - Application.originX;
+    }
+
+    public static float getMousePositionY() {
+        return Mouse.getY() - Application.originY;
     }
 }

@@ -3,6 +3,8 @@ package testgame;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
+import javafx.scene.input.MouseButton;
+import org.lwjgl.input.Mouse;
 
 public class Player extends GameListener {
 

@@ -3,16 +3,12 @@ package testgame;
 import com.ibq2d.engine.core.*;
 import org.lwjgl.input.Keyboard;
 
-import java.util.ArrayList;
-
 public class StartScreen extends Scene {
 
     Text text;
 
     @Override
     public void initializeScene() {
-        gameListeners = new ArrayList<IGameListener>();
-
         gameListeners.add(this);
     }
 
@@ -38,5 +34,6 @@ public class StartScreen extends Scene {
 
     @Override
     public void destroy() {
+        gameListeners.clear();
     }
 }

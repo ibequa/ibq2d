@@ -2,7 +2,7 @@ package com.ibq2d.engine.core;
 
 public abstract class GameListener implements IGameListener {
 
-    public boolean enabled;
+    public boolean enabled = true;
 
     @Override
     public void awake() {
@@ -25,7 +25,7 @@ public abstract class GameListener implements IGameListener {
     }
 
     @Override
-    public final void destroy() {
+    public void destroy() {
 
     }
 

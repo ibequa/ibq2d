@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 public class ContactDetection {
 
-    private static ArrayList<Collider> listeners = new ArrayList<Collider>();
-    private static HashMap<Collider, Collider> contactingWith = new HashMap<>();
+    public static ArrayList<Collider> listeners = new ArrayList<Collider>();
+    public static HashMap<Collider, Collider> contactingWith = new HashMap<>();
 
     protected static void addListener(Collider listener) {
         listeners.add(listener);

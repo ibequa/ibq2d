@@ -38,6 +38,9 @@ public class Ball extends GameListener {
         position = sprite.getPosition();
 
         rigidBody.getVelocity().setY(Math.min(maxSpeed, rigidBody.getVelocity().getY()));
+
+        if (Math.abs(position.getY()) > Application.HALF_HEIGHT)
+            SceneManager.restart();
     }
 
     @Override

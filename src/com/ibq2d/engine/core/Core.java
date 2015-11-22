@@ -5,7 +5,9 @@ import com.ibq2d.engine.physics.ContactDetection;
 public class Core {
 
     private boolean isRunning;
-    private Scene runningScene;
+    private static Scene runningScene;
+
+    protected static int onRestart = -1;
 
     public static void main(String[] args) {
         Window.createWindow(Application.WIDTH, Application.HEIGHT, Application.APP_NAME);
@@ -29,7 +31,7 @@ public class Core {
         SceneManager.setCurrentScene(SceneManager.getScene(0));
         runningScene = SceneManager.getCurrentScene();
 
-        runningScene.initializeScene();
+        runningScene.onInitializeScene();
         runningScene.awake();
         runningScene.start();
 
@@ -69,13 +71,32 @@ public class Core {
 
                 runningScene.update();
 
+                if (onRestart > -1) {
+                    runningScene.destroy();
+
+                    ContactDetection.listeners.clear();
+                    ContactDetection.contactingWith.clear();
+
+                    runningScene.onInitializeScene();
+                    runningScene.awake();
+                    runningScene.start();
+
+                    System.gc();
+                    onRestart = -1;
+                }
+
                 if (runningScene != SceneManager.getCurrentScene()) {
                     if (runningScene != null)
                         runningScene.destroy();
+
+                    ContactDetection.listeners.clear();
+                    ContactDetection.contactingWith.clear();
+
                     runningScene = SceneManager.getCurrentScene();
-                    runningScene.initializeScene();
+                    runningScene.onInitializeScene();
                     runningScene.awake();
                     runningScene.start();
+                    System.gc();
                 }
 
                 Time.deltaTime = elapsedTime;
