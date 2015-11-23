@@ -1,10 +1,10 @@
 package testgame;
 
+import com.ibq2d.engine.core.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
-import javafx.scene.input.MouseButton;
-import org.lwjgl.input.Mouse;
+import org.lwjgl.input.Keyboard;
 
 public class Player extends GameListener {
 
@@ -45,6 +45,9 @@ public class Player extends GameListener {
 
         sprite.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
         collider.shape.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
+
+        if (Input.getKeyDown(Keyboard.KEY_ESCAPE))
+            Application.exit();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package testgame;
 
+import com.ibq2d.engine.core.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
@@ -22,7 +23,7 @@ public class AIPlayer extends GameListener{
         collider = new BoxCollider(new Rect(sprite), false, new ContactListener() {
             @Override
             public void onContactEnter(Collider collider) {
-                if (collider.tag == "Ball") {
+                if (collider.tag.equals("Ball")) {
                     Vector2 ballVelocity = collider.rigidBody.getVelocity();
                     ballVelocity.set(ballVelocity.getX() * translation * 0.2f, -ballVelocity.getY());
                 }

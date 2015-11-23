@@ -7,7 +7,7 @@ public class Core {
     private boolean isRunning;
     private static Scene runningScene;
 
-    protected static int onRestart = -1;
+    protected static boolean onRestart = false;
 
     public static void main(String[] args) {
         Window.createWindow(Application.WIDTH, Application.HEIGHT, Application.APP_NAME);
@@ -28,7 +28,9 @@ public class Core {
 
         RenderUtil.init();
 
-        SceneManager.setCurrentScene(SceneManager.getScene(0));
+        SceneManager.setCurrentScene(Application.scenes[0]);
+        SceneManager.setCurrentSceneIndex(0);
+
         runningScene = SceneManager.getCurrentScene();
 
         runningScene.onInitializeScene();
@@ -48,7 +50,6 @@ public class Core {
         boolean render;
 
         while (isRunning) {
-
             render = false;
 
             double currentTime = Time.getTime();
@@ -71,7 +72,7 @@ public class Core {
 
                 runningScene.update();
 
-                if (onRestart > -1) {
+                if (onRestart) {
                     runningScene.destroy();
 
                     ContactDetection.listeners.clear();
@@ -82,7 +83,7 @@ public class Core {
                     runningScene.start();
 
                     System.gc();
-                    onRestart = -1;
+                    onRestart = false;
                 }
 
                 if (runningScene != SceneManager.getCurrentScene()) {

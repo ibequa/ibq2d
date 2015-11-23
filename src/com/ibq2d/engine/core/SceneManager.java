@@ -4,27 +4,50 @@ public final class SceneManager {
     private SceneManager() {}
 
     private static Scene currentScene;
+    private static int currentSceneIndex;
 
-    public static void setCurrentScene(Scene currentScene) {
+    protected static void setCurrentScene(Scene currentScene) {
         SceneManager.currentScene = currentScene;
     }
 
-    public static Scene getCurrentScene() {
+    protected static Scene getCurrentScene() {
         return currentScene;
     }
 
-    public static int getCurrentSceneIndex() {
-        for (int i = 0; i < Application.scenes.length; i++)
-            if (currentScene.equals(Application.scenes[i]))
+    protected static int getCurrentSceneIndex() {
+        return currentSceneIndex;
+    }
+
+    protected static void setCurrentSceneIndex(int _currentSceneIndex) {
+        currentSceneIndex = _currentSceneIndex;
+    }
+
+    protected static int getSceneIndex(String name) {
+        String nameUnformated, nameFormated;
+        for (int i = 0; i < Application.scenes.length; i++) {
+            nameUnformated = Application.scenes.getClass().getName();
+            nameFormated = nameUnformated.substring(nameUnformated.lastIndexOf(".") + 1);
+            if (nameFormated.equals(name))
                 return i;
+        }
+
+        System.err.println("Invalid scene name");
+        System.exit(1);
         return -1;
     }
 
-    public static Scene getScene(int index) {
-        return (index < Application.scenes.length) ? Application.scenes[index] : null;
+  /*  protected static Scene getScene(int index) {
+        if (index < Application.scenes.length)
+            return Application.scenes[index];
+        else {
+            System.err.println("Invalid scene index");
+            System.exit(1);
+            return null;
+        }
     }
+    */
 
-    public static Scene getScene(String name) {
+   /* public static Scene getScene(String name) {
         String nameUnformated, nameFormated;
         for (Scene scene : Application.scenes) {
             nameUnformated = scene.getClass().getName();
@@ -32,10 +55,14 @@ public final class SceneManager {
             if (nameFormated.equals(name))
                 return scene;
         }
-        return null;
-    }
 
-    public static void restart() {
-        Core.onRestart = getCurrentSceneIndex();
+        System.err.println("Invalid scene index");
+        System.exit(1);
+        return null;
+    }*/
+
+    // restarts loaded scene
+    protected static void restart() {
+        Core.onRestart = true;
     }
 }

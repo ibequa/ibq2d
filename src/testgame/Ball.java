@@ -1,5 +1,6 @@
 package testgame;
 
+import com.ibq2d.engine.core.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
@@ -39,8 +40,14 @@ public class Ball extends GameListener {
 
         rigidBody.getVelocity().setY(Math.min(maxSpeed, rigidBody.getVelocity().getY()));
 
-        if (Math.abs(position.getY()) > Application.HALF_HEIGHT)
-            SceneManager.restart();
+        if (position.getY() > Application.HALF_HEIGHT) {
+            Score.score++;
+            Application.load(Application.loadedScene());
+        }
+        else if (position.getY() < -Application.HALF_HEIGHT) {
+            Score.score--;
+            Application.load(Application.loadedScene());
+        }
     }
 
     @Override

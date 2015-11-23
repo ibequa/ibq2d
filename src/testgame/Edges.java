@@ -1,5 +1,6 @@
 package testgame;
 
+import com.ibq2d.engine.core.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
@@ -15,7 +16,7 @@ public class Edges extends GameListener {
                 new Vector2(-Application.WIDTH / 2, Application.HEIGHT / 2)), false, new ContactListener() {
             @Override
             public void onContactEnter(Collider collider) {
-                if (collider.tag == "Ball")
+                if (collider.tag.equals("Ball"))
                     bounceBallBack(Vector2.right(), collider.rigidBody.getVelocity());
             }
         });
@@ -24,7 +25,7 @@ public class Edges extends GameListener {
                     new Vector2(Application.WIDTH / 2, Application.HEIGHT / 2)), false, new ContactListener() {
             @Override
             public void onContactEnter(Collider collider) {
-                if (collider.tag == "Ball")
+                if (collider.tag.equals("Ball"))
                     bounceBallBack(Vector2.left(), collider.rigidBody.getVelocity());
             }
         });

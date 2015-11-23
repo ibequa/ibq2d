@@ -4,16 +4,16 @@ import com.ibq2d.engine.core.*;
 
 public class Score extends GameListener{
 
-    Text score;
-    private int count;
+    Text scoreText;
+    public static int score;
 
     @Override
     public void awake() {
-        score = new Text("score", "Pacifico", 24f);
+        scoreText = new Text("score: " + score, "Pacifico", 24f);
     }
 
     @Override
     public void draw() {
-        score.draw();
+        scoreText.draw();
     }
 }

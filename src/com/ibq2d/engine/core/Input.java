@@ -1,8 +1,6 @@
 package com.ibq2d.engine.core;
 
-import com.ibq2d.engine.core.Application;
 import com.ibq2d.engine.geometry.Vector2;
-import javafx.scene.input.MouseButton;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
@@ -11,8 +9,8 @@ import java.util.HashSet;
 public final class Input {
     private Input() {}
 
-    private static HashSet<Integer> pressedKeys = new HashSet<Integer>();
-    private static HashSet<Integer> releasedKeys = new HashSet<Integer>();
+    private static HashSet<Integer> pressedKeys = new HashSet<>();
+    private static HashSet<Integer> releasedKeys = new HashSet<>();
 
     private static HashSet<Integer> pressedMouseBt = new HashSet<>();
     private static HashSet<Integer> releasedMouseBt = new HashSet<>();

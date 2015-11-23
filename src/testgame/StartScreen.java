@@ -19,8 +19,8 @@ public class StartScreen extends Scene {
 
     @Override
     public void update() {
-        if (Input.getKey(Keyboard.KEY_ESCAPE))
-            SceneManager.setCurrentScene(SceneManager.getScene(1));
+        if (Input.getKeyDown(Keyboard.KEY_ESCAPE))
+            Application.load(1);
     }
 
     @Override

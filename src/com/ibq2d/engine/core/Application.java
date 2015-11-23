@@ -1,5 +1,6 @@
 package com.ibq2d.engine.core;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import testgame.*;
 import org.lwjgl.input.Keyboard;
 
@@ -22,5 +23,24 @@ public final class Application {
     public static final int[] horizontalAxis = { Keyboard.KEY_A, Keyboard.KEY_D };
     public static final int[] verticalAxis = { Keyboard.KEY_S, Keyboard.KEY_W };
 
-    public static Scene scenes[] = new Scene[] { new StartScreen(), new MainScene() };
+    protected static Scene scenes[] = new Scene[] { new StartScreen(), new MainScene() };
+
+    public static void load(int sceneIndex) {
+        if (sceneIndex == SceneManager.getCurrentSceneIndex()) {
+            SceneManager.restart();
+            return;
+        }
+        SceneManager.setCurrentSceneIndex(sceneIndex);
+        SceneManager.setCurrentScene(scenes[sceneIndex]);
+    }
+
+    public static int loadedScene() {
+        return SceneManager.getCurrentSceneIndex();
+    }
+
+    public static int getSceneIndex(String name) {
+        return SceneManager.getSceneIndex(name);
+    }
+
+    public static void exit() { throw new NotImplementedException(); }
 }
