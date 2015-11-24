@@ -7,4 +7,6 @@ public interface IGameListener {
     void draw();
     void destroy();
     boolean isEnabled();
+    void onEnable();
+    void onDisable();
 }

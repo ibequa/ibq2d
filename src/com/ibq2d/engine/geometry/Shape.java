@@ -80,13 +80,13 @@ public abstract class Shape {
 
     public void translateX(float byX) {
         for (int i = 0; i < vertices.size(); i++)
-            vertices.get(i).set(vertices.get(i).getX() + byX, vertices.get(i).getY());
+            vertices.get(i).set((vertices.get(i).getX() + byX), vertices.get(i).getY());
         position = new Vector2(position.getX() + byX, position.getY());
     }
 
     public void translateY(float byY) {
         for (int i = 0; i < vertices.size(); i++)
-            vertices.get(i).set(vertices.get(i).getX(), vertices.get(i).getY() + byY);
+            vertices.get(i).set(vertices.get(i).getX(), (vertices.get(i).getY() + byY));
         position = new Vector2(position.getX(), position.getY() + byY);
     }
 

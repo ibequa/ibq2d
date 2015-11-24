@@ -9,7 +9,7 @@ public class Score extends GameListener{
 
     @Override
     public void awake() {
-        scoreText = new Text("score: " + score, "Pacifico", 24f);
+        scoreText = new Text("score: " + score, "Pacifico.ttf", 24f);
     }
 
     @Override

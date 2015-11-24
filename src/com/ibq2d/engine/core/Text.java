@@ -39,7 +39,7 @@ public class Text {
         this.text = text;
 
         try {
-            InputStream inputStream = ResourceLoader.getResourceAsStream("./res/fonts/" + fontFile + ".ttf");
+            InputStream inputStream = ResourceLoader.getResourceAsStream("./res/fonts/" + fontFile);
 
             Font awtFont = Font.createFont(Font.TRUETYPE_FONT, inputStream);
             awtFont = awtFont.deriveFont(size);

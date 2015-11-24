@@ -27,6 +27,18 @@ public abstract class Scene implements IGameListener {
     }
 
     @Override
+    public final void onDisable() {
+    }
+
+    @Override
+    public void onEnable() {
+        for (IGameListener gameListener : gameListeners) {
+            if (gameListener.isEnabled())
+                gameListener.onEnable();
+        }
+    }
+
+    @Override
     public void update() {
         for (IGameListener gameListener : gameListeners)
         if (gameListener.isEnabled())
@@ -36,7 +48,8 @@ public abstract class Scene implements IGameListener {
     @Override
     public void draw() {
         for (IGameListener gameListener : gameListeners)
-            gameListener.draw();
+            if (gameListener.isEnabled())
+                gameListener.draw();
     }
 
     @Override

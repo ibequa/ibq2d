@@ -14,7 +14,7 @@ public class StartScreen extends Scene {
 
     @Override
     public void awake() {
-        text = new Text("Press ESC to start", "Pacifico", 20f);
+        text = new Text("Press ESC to start", "Pacifico.ttf", 20f);
     }
 
     @Override

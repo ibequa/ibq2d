@@ -1,6 +1,7 @@
 package com.ibq2d.engine.geometry;
 
 import com.ibq2d.engine.core.Sprite;
+import com.ibq2d.engine.core.Time;
 
 public class Circle extends Shape {
     private float radius;
