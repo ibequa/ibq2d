@@ -1,6 +1,6 @@
 # ibQ2D<br>
 
-<i>2d game development framework</i> <p>Currently has: </p> 
+<i>open-source game development framework</i> <p>Currently has: </p> 
 - input system (mouse/keyboard)
 - collision detection for primitives
 - game state callbacks
@@ -10,4 +10,5 @@
 - scene support
 <hr>
 Get started with <b><a href="https://github.com/ibequa/ibq2d/wiki">Wiki</a></b>!
+
 <sub><i>inspired by Unity3D and LibGDX</i></sub>
