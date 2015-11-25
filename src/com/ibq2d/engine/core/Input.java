@@ -74,17 +74,17 @@ public final class Input {
     }
 
     public static Vector2 getMousePosition() {
-        float x = Mouse.getX() - Application.originX;
-        float y = Mouse.getY() - Application.originY;
+        float x = Mouse.getX() - Application.HALF_WIDTH;
+        float y = Mouse.getY() - Application.HALF_HEIGHT;
 
         return new Vector2(x,y);
     }
 
     public static float getMousePositionX() {
-        return Mouse.getX() - Application.originX;
+        return Mouse.getX() - Application.HALF_WIDTH;
     }
 
     public static float getMousePositionY() {
-        return Mouse.getY() - Application.originY;
+        return Mouse.getY() - Application.HALF_HEIGHT;
     }
 }

@@ -32,6 +32,55 @@ public class Rect extends Shape {
         scale(sprite.getScale().getX(), sprite.getScale().getY());
     }
 
+    @Override
+    public boolean vectorInside(Vector2 vector) {
+        if (getRotation() != 0) {
+            // TODO: IMPLEMENT
+            return false;
+        }
+        float rectX = getPosition().getX();
+        float rectY = getPosition().getY();
+        float subWidth = getWidth()/2;
+        float subHeight = getHeight()/2;
+
+        return Geometry.pointWithin(vector.getX(), rectX - subWidth, rectX + subWidth) &&
+                Geometry.pointWithin(vector.getY(), rectY - subHeight, rectY + subHeight);
+    }
+
+    @Override
+    public boolean intersectsWith(Circle circle) {
+        if (Math.pow(this.getOuterCircleRadius() + circle.getRadius(), 2) < Vector2.subtract(this.getPosition(), circle.getPosition()).sqrMagnitude())
+            return false;
+        Vector2 dir = Vector2.subtract(this.getPosition(), circle.getPosition()).normalized();
+        Vector2 outerPoint = Vector2.add(circle.getPosition(), dir.multiplyBy(circle.getRadius()));
+        return this.vectorInside(outerPoint);
+    }
+
+    @Override
+    public boolean intersectsWith(Rect rect) {
+        if (rect.getRotation() == 0 && this.getRotation() == 0) {
+            Vector2 a1 = new Vector2(this.vertices.get(0).getX(), this.vertices.get(0).getY());
+            Vector2 a2 = new Vector2(this.vertices.get(2).getX(), this.vertices.get(2).getY());
+            Vector2 b1 = new Vector2(rect.vertices.get(0).getX(), rect.vertices.get(0).getY());
+            Vector2 b2 = new Vector2(rect.vertices.get(2).getX(), rect.vertices.get(2).getY());
+
+            return (a1.getX() < b2.getX() && a2.getX() > b1.getX() && a1.getY() < b2.getY() && a2.getY() > b1.getY());
+        }
+        // TODO: IMPLEMENT!
+        else return false;
+    }
+
+    @Override
+    public boolean intersectsWith(Polygon polygon) {
+        // TODO: IMPLEMENT
+        return false;
+    }
+
+    @Override
+    public boolean intersectsWith(Edge edge) {
+        return edge.intersectsWith(this);
+    }
+
     public float getWidth() {
         return width;
     }

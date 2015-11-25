@@ -10,6 +10,12 @@ public abstract class Shape {
 
     public ArrayList<Vector2> vertices;
 
+    public abstract boolean vectorInside(Vector2 vector);
+    public abstract boolean intersectsWith(Circle circle);
+    public abstract boolean intersectsWith(Rect rect);
+    public abstract boolean intersectsWith(Polygon polygon);
+    public abstract boolean intersectsWith(Edge edge);
+
     public Shape(Vector2 position) {
         this.position = position;
         vertices = new ArrayList<>();

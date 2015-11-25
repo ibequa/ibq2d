@@ -30,6 +30,39 @@ public class Circle extends Shape {
         vertices.add(sprite.getPosition());
     }
 
+    @Override
+    public boolean vectorInside(Vector2 vector) {
+        float sqrDistance = Vector2.subtract(vector, this.getPosition()).sqrMagnitude();
+        if (sqrDistance < this.getRadius())
+            return true;
+        else return (sqrDistance > Math.pow(this.getRadius(), 2)) ? false : true;
+    }
+
+    @Override
+    public boolean intersectsWith(Circle circle) {
+        float distance = Vector2.subtract(this.getPosition(), circle.getPosition()).magnitude();
+
+        return (distance <= (this.getRadius() + circle.getRadius()));
+    }
+
+    @Override
+    public boolean intersectsWith(Rect rect) {
+        return rect.intersectsWith(this);
+    }
+
+    @Override
+    public boolean intersectsWith(Polygon polygon) {
+        for (Edge edge : polygon.edges)
+            if (edge.intersectsWith(this))
+                return true;
+        return false;
+    }
+
+    @Override
+    public boolean intersectsWith(Edge edge) {
+        return edge.intersectsWith(this);
+    }
+
     public float getRadius() {
         return radius;
     }

@@ -159,9 +159,9 @@ public class Vector2 implements Comparable<Vector2> {
             b1 = tmp;
         }
         if (a0.getX() != b0.getX())
-            return Geometry.lineSegmentOverlap(a0.getX(), a1.getX(), b0.getX(), b1.getX());
+            return Geometry.linesOverlap(a0.getX(), a1.getX(), b0.getX(), b1.getX());
         else
-            return Geometry.lineSegmentOverlap(a0.getY(), a1.getY(), b0.getY(), b1.getY());
+            return Geometry.linesOverlap(a0.getY(), a1.getY(), b0.getY(), b1.getY());
     }
 
     public static Vector2 add(Vector2 a, Vector2 b) { return new Vector2(a.x + b.x, a.y + b.y); }

@@ -61,27 +61,17 @@ public class ContactDetection {
     }
 
     private static boolean shapesOverlapHandler(Shape a, Shape b) {
-        if (a.getClass() == Circle.class && b.getClass() == Circle.class)
-            return Geometry.shapesOverlap((Circle) a, (Circle) b);
+        if (b.getClass() == Circle.class)
+            return a.intersectsWith((Circle) b);
 
-        else if (a.getClass() == Rect.class && b.getClass() == Circle.class)
-            return Geometry.shapesOverlap((Rect) a, (Circle) b);
+        else if (b.getClass() == Rect.class)
+            return a.intersectsWith((Rect) b);
 
-        else if (a.getClass() == Circle.class && b.getClass() == Rect.class)
-            return Geometry.shapesOverlap((Rect) b, (Circle) a);
+        else if (b.getClass() == Edge.class)
+            return a.intersectsWith((Edge) b);
 
-        else if (a.getClass() == Edge.class && b.getClass() == Circle.class)
-            return Geometry.shapesOverlap((Edge) a, (Circle) b);
-
-        else if (a.getClass() == Circle.class && b.getClass() == Edge.class)
-            return Geometry.shapesOverlap((Edge) b, (Circle) a);
-
-        else if (a.getClass() == Rect.class && b.getClass() == Edge.class)
-            return Geometry.shapesOverlap((Rect) a, (Edge) b);
-        else if (a.getClass() == Edge.class && b.getClass() == Rect.class)
-            return Geometry.shapesOverlap((Rect) b, (Edge) a);
-
-
+        else if (b.getClass() == Polygon.class)
+            return a.intersectsWith((Polygon) b);
         else return false;
     }
 }

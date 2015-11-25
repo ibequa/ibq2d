@@ -33,8 +33,32 @@ public class Edge extends Shape {
         return vec1;
     }
 
-    public boolean overlap(Circle circle) {
+    @Override
+    public boolean vectorInside(Vector2 vector) {
+        return false;
+    }
+
+    @Override
+    public boolean intersectsWith(Circle circle) {
         return distanceFrom(circle.getPosition()) <= circle.getRadius();
+    }
+
+    @Override
+    public boolean intersectsWith(Rect rect) {
+        for (Edge edge : rect.edges)
+            if (this.intersectsWith(edge))
+                return true;
+        return false;
+    }
+
+    @Override
+    public boolean intersectsWith(Polygon polygon) {
+        return polygon.intersectsWith(this);
+    }
+
+    @Override
+    public boolean intersectsWith(Edge edge) {
+        return Geometry.linesIntersect(edge.vec0, edge.vec1, this.vec0, this.vec1);
     }
 
     public float distanceFrom(Vector2 p) {
