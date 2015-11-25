@@ -7,7 +7,8 @@
 - basic geometry
 - texture loading
 - text support, custom fonts
-- scene support
+- scene system
+- 2D animation
 <hr>
 <b><a href="https://github.com/ibequa/ibq2d/wiki">WIKI</a></b>
 
