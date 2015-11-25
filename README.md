@@ -9,6 +9,6 @@
 - text support, custom fonts
 - scene support
 <hr>
-Get started with <b><a href="https://github.com/ibequa/ibq2d/wiki">Wiki</a></b>!
+<b><a href="https://github.com/ibequa/ibq2d/wiki">WIKI</a></b>
 
 <sub><i>inspired by <a href="https://unity3d.com">Unity3D</a> and <a href="https://libgdx.badlogicgames.com">LibGDX</a></i></sub>
