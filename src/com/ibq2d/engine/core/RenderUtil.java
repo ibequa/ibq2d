@@ -1,8 +1,10 @@
 package com.ibq2d.engine.core;
 
+import com.ibq2d.engine.Application;
+
 import static org.lwjgl.opengl.GL11.*;
 
-public final class RenderUtil {
+final class RenderUtil {
     private RenderUtil() {}
 
     protected static void init() {
@@ -12,7 +14,7 @@ public final class RenderUtil {
 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        glOrtho(-Application.HALF_WIDTH, Application.HALF_WIDTH, Application.HALF_HEIGHT, -Application.HALF_HEIGHT, 1, -1);
+        glOrtho(-Application.originX, Application.originX, Application.originY, -Application.originY, 1, -1);
         glMatrixMode(GL_MODELVIEW);
 
         // set buffers defaults

@@ -1,6 +1,6 @@
 package testgame;
 
-import com.ibq2d.engine.core.Application;
+import com.ibq2d.engine.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
@@ -42,11 +42,11 @@ public class Ball extends GameListener {
 
         if (position.getY() > Application.HALF_HEIGHT) {
             Score.score++;
-            Application.load(Application.loadedScene());
+            SceneManager.load(SceneManager.loadedScene());
         }
         else if (position.getY() < -Application.HALF_HEIGHT) {
             Score.score--;
-            Application.load(Application.loadedScene());
+            SceneManager.load(SceneManager.loadedScene());
         }
     }
 

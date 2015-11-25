@@ -1,5 +1,6 @@
 package com.ibq2d.engine.core;
 
+import com.ibq2d.engine.Application;
 import com.ibq2d.engine.geometry.Vector2;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;

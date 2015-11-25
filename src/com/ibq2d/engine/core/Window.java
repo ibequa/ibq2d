@@ -4,7 +4,7 @@ import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
-public final class Window {
+final class Window {
 
     private Window() {}
 

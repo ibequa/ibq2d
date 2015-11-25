@@ -1,9 +1,10 @@
 package com.ibq2d.engine.core;
 
+import com.ibq2d.engine.Application;
 import com.ibq2d.engine.physics.ContactDetection;
 import org.lwjgl.openal.AL;
 
-public class Core {
+class Core {
 
     private boolean isRunning;
     private static Scene runningScene;
@@ -75,7 +76,7 @@ public class Core {
                 runningScene.update();
 
                 if (onRestart) {
-                    runningScene.destroy();
+                    runningScene.onDestroy();
 
                     ContactDetection.listeners.clear();
                     ContactDetection.contactingWith.clear();
@@ -91,7 +92,7 @@ public class Core {
 
                 if (runningScene != SceneManager.getCurrentScene()) {
                     if (runningScene != null)
-                        runningScene.destroy();
+                        runningScene.onDestroy();
 
                     ContactDetection.listeners.clear();
                     ContactDetection.contactingWith.clear();
@@ -121,9 +122,12 @@ public class Core {
             return;
 
         isRunning = false;
-        runningScene.destroy();
-        System.gc();
+
+        runningScene.onDestroy();
+        runningScene.onQuit();
         AL.destroy();
+
+        System.gc();
         Window.dispose();
     }
 }

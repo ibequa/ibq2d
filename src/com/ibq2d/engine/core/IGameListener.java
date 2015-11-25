@@ -1,6 +1,6 @@
 package com.ibq2d.engine.core;
 
-public interface IGameListener {
+interface IGameListener {
     void start();
     void awake();
     void update();
@@ -9,4 +9,5 @@ public interface IGameListener {
     boolean isEnabled();
     void onEnable();
     void onDisable();
+    void onQuit();
 }

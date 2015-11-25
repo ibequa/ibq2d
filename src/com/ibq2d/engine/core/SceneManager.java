@@ -1,5 +1,7 @@
 package com.ibq2d.engine.core;
 
+import com.ibq2d.engine.Application;
+
 public final class SceneManager {
     private SceneManager() {}
 
@@ -22,7 +24,9 @@ public final class SceneManager {
         currentSceneIndex = _currentSceneIndex;
     }
 
-    protected static int getSceneIndex(String name) {
+    public static int loadedScene() { return currentSceneIndex; }
+
+    public static int getSceneIndex(String name) {
         String nameUnformated, nameFormated;
         for (int i = 0; i < Application.scenes.length; i++) {
             nameUnformated = Application.scenes.getClass().getName();
@@ -34,6 +38,15 @@ public final class SceneManager {
         System.err.println("Invalid scene name");
         System.exit(1);
         return -1;
+    }
+
+    public static void load(int sceneIndex) {
+        if (sceneIndex == SceneManager.getCurrentSceneIndex()) {
+            SceneManager.restart();
+            return;
+        }
+        SceneManager.setCurrentSceneIndex(sceneIndex);
+        SceneManager.setCurrentScene(Application.scenes[sceneIndex]);
     }
 
   /*  protected static Scene getScene(int index) {

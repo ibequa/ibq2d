@@ -1,11 +1,11 @@
 package testgame;
 
-import com.ibq2d.engine.core.Application;
+import com.ibq2d.engine.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
 
-public class AIPlayer extends GameListener{
+public class AIPlayer extends GameListener {
     Texture texture;
     Sprite sprite;
     Collider collider;
