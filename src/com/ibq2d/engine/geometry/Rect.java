@@ -1,5 +1,6 @@
 package com.ibq2d.engine.geometry;
 
+import com.ibq2d.engine.Application;
 import com.ibq2d.engine.core.Sprite;
 
 public class Rect extends Shape {
@@ -15,6 +16,7 @@ public class Rect extends Shape {
     }
 
     public Rect(float width, float height) {
+        super();
         this.width = width;
         this.height = height;
 
@@ -35,8 +37,12 @@ public class Rect extends Shape {
     @Override
     public boolean vectorInside(Vector2 vector) {
         if (getRotation() != 0) {
-            // TODO: IMPLEMENT
-            return false;
+            Edge extreme = new Edge(new Vector2(Application.WIDTH, vector.getY()), vector);
+            int count = 0;
+            for (Edge rectEdge : this.edges) {
+                if (extreme.intersectsWith(rectEdge)) count++;
+            }
+            return (count&1) == 1;
         }
         float rectX = getPosition().getX();
         float rectY = getPosition().getY();
@@ -66,13 +72,13 @@ public class Rect extends Shape {
 
             return (a1.getX() < b2.getX() && a2.getX() > b1.getX() && a1.getY() < b2.getY() && a2.getY() > b1.getY());
         }
-        // TODO: IMPLEMENT!
+        // TODO: IMPLEMENT SAT!
         else return false;
     }
 
     @Override
     public boolean intersectsWith(Polygon polygon) {
-        // TODO: IMPLEMENT
+        // TODO: IMPLEMENT SAT
         return false;
     }
 

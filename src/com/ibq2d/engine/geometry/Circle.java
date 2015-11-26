@@ -3,27 +3,36 @@ package com.ibq2d.engine.geometry;
 import com.ibq2d.engine.core.Sprite;
 import com.ibq2d.engine.core.Time;
 
+import java.util.ArrayList;
+
 public class Circle extends Shape {
     private float radius;
     private float diameter;
 
     public Circle(float radius, Vector2 position) {
-        super(position);
-        this.radius = radius;
+        vertices = new ArrayList<>();
+        this.setPosition(position);
 
+        this.radius = radius;
         diameter = radius * 2.0f;
+
         vertices.add(position);
     }
 
     public Circle(float radius) {
-        this.radius = radius;
+        vertices = new ArrayList<>();
+        this.setPosition(Vector2.zero());
 
+        this.radius = radius;
         diameter = radius * 2.0f;
+
         vertices.add(getPosition());
     }
 
     public Circle(Sprite sprite) {
-        super(sprite.getPosition());
+        vertices = new ArrayList<>();
+        this.setPosition(sprite.getPosition());
+
         this.radius = sprite.getWidth()/2;
         this.diameter = radius * 2.0f;
 

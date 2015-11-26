@@ -59,8 +59,10 @@ public abstract class Scene implements IGameListener {
     }
 
     public final void onDestroy() {
-        for (GameListener gameListener : gameListeners)
+        for (GameListener gameListener : gameListeners) {
             gameListener.destroy();
+            //gameListener = null;
+        }
 
         gameListeners.clear();
 
@@ -68,8 +70,7 @@ public abstract class Scene implements IGameListener {
     }
 
     @Override
-    public final void destroy() {
-    }
+    public final void destroy() {}
 
     @Override
     public final void onQuit() {

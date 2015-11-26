@@ -24,10 +24,12 @@ public class Player extends GameListener {
         collider = new BoxCollider(new Rect(sprite), false, new ContactListener() {
             @Override
             public void onContactEnter(Collider collider) {
-                Vector2 ballVelocity = collider.rigidBody.getVelocity();
-                float coef = translation * 0.8f;
-                if (coef == 0) coef = 1;
-                ballVelocity.set(ballVelocity.getX()+coef, -ballVelocity.getY()*Math.abs(coef)*0.5f);
+                if (collider.tag == "Ball") {
+                    Vector2 ballVelocity = collider.rigidBody.getVelocity();
+                    float coef = translation * 0.8f;
+                    if (coef == 0) coef = 1;
+                    ballVelocity.set(ballVelocity.getX() + coef, -ballVelocity.getY() * Math.abs(coef) * 0.5f);
+                }
             }
         });
         collider.tag = "Platform";

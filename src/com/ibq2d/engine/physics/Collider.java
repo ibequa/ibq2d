@@ -19,6 +19,7 @@ public class Collider {
         this.contactListener = contactListener;
 
         id = getClass().hashCode();
+        tag = "";
 
         ContactDetection.addListener(this);
     }
