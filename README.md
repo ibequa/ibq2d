@@ -1,6 +1,6 @@
 # ibQ2D<br>
 
-<i>open-source game development framework</i> <p>Currently has: </p> 
+<i>open-source game development framework</i> <p>Currently supports: </p> 
 - input system (mouse/keyboard)
 - collision detection (box/circle/edge/polygon)
 - game state callbacks
