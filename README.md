@@ -2,7 +2,7 @@
 
 <i>open-source game development framework</i> <p>Currently has: </p> 
 - input system (mouse/keyboard)
-- collision detection for primitives
+- collision detection (box/circle/edge/polygon)
 - game state callbacks
 - basic geometry
 - texture loading
