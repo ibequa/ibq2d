@@ -18,15 +18,26 @@ public class Ball extends GameListener {
     public static Vector2 velocity;
     public static Vector2 position;
 
+    Audio hitSound;
+
     @Override
     public void awake() {
         texture = new Texture("ball.png");
         spriteBatch = new SpriteBatch();
         sprite = new Sprite(texture);
 
-        collider = new CircleCollider(new Circle(sprite), false, new ContactListener() {});
+        hitSound = new Audio("hitSound.wav", false);
+
+        collider = new CircleCollider(new Circle(sprite), false, new ContactListener() {
+            @Override
+            public void onContactEnter(Collider collider) {
+                if (collider.tag == "Platform") {
+                    hitSound.playAsSoundEffect();
+                }
+            }
+        });
         collider.tag = "Ball";
-        rigidBody = new RigidBody(new Vector2(0f, -1f).multiplyBy(9), collider);
+        rigidBody = new RigidBody(new Vector2(0f, -1f).multiplyBy(5), collider);
 
         velocity = rigidBody.getVelocity();
         position = sprite.getPosition();

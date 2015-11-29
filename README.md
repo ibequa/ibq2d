@@ -9,6 +9,8 @@
 - text support, custom fonts
 - scene system
 - 2D animation
+- basic sound
+- additive scene loading
 <hr>
 <b><a href="https://github.com/ibequa/ibq2d/wiki">WIKI</a></b>
 

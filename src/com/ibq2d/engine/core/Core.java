@@ -4,10 +4,13 @@ import com.ibq2d.engine.Application;
 import com.ibq2d.engine.physics.ContactDetection;
 import org.lwjgl.openal.AL;
 
+import java.util.HashSet;
+
 class Core {
 
     private boolean isRunning;
     private static Scene runningScene;
+    protected static HashSet<Scene> additives;
 
     protected static boolean onRestart = false;
 
@@ -15,6 +18,7 @@ class Core {
         Window.createWindow(Application.WIDTH, Application.HEIGHT, Application.APP_NAME);
 
         Core game = new Core();
+        additives = new HashSet<>();
 
         game.awake();
     }
@@ -74,12 +78,18 @@ class Core {
                 ContactDetection.checkCollisions();
 
                 runningScene.update();
+                for (Scene additive : additives)
+                    additive.update();
 
                 if (onRestart) {
                     runningScene.onDestroy();
 
+                    for (Scene additive : additives)
+                        additive.destroy();
+
                     ContactDetection.listeners.clear();
                     ContactDetection.contactingWith.clear();
+                    additives.clear();
 
                     runningScene.onInitializeScene();
                     runningScene.awake();
@@ -94,14 +104,19 @@ class Core {
                     if (runningScene != null)
                         runningScene.onDestroy();
 
+                    for (Scene additive : additives)
+                        additive.onDestroy();
+
                     ContactDetection.listeners.clear();
                     ContactDetection.contactingWith.clear();
+                    additives.clear();
 
                     runningScene = SceneManager.getCurrentScene();
                     runningScene.onInitializeScene();
                     runningScene.awake();
                     runningScene.onEnable();
                     runningScene.start();
+
                     System.gc();
                 }
 
@@ -124,6 +139,13 @@ class Core {
         isRunning = false;
 
         runningScene.onDestroy();
+
+        for (Scene additive : additives)
+            additive.onDestroy();
+
+        for (Scene additive : additives)
+            additive.onQuit();
+
         runningScene.onQuit();
         AL.destroy();
 

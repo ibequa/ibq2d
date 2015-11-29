@@ -22,6 +22,8 @@ final class Window {
 
     public static void render() {
         SceneManager.getCurrentScene().draw();
+        for (Scene additive : Core.additives)
+            additive.draw();
 
         Display.update();
     }

@@ -17,7 +17,7 @@ public final class Application {
     public static final int[] horizontalAxis = { Keyboard.KEY_A, Keyboard.KEY_D };
     public static final int[] verticalAxis = { Keyboard.KEY_S, Keyboard.KEY_W };
 
-    public static final Scene scenes[] = new Scene[] { new StartScreen(), new MainScene() };
+    public static final Scene scenes[] = new Scene[] { new StartScreen(), new MainScene(), new AdditiveScene() };
 
     public static final int HALF_WIDTH = WIDTH/2;
     public static final int HALF_HEIGHT = HEIGHT/2;

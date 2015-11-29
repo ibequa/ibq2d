@@ -1,6 +1,7 @@
 package testgame;
 
 import com.ibq2d.engine.core.*;
+import com.ibq2d.engine.ui.Text;
 
 public class Score extends GameListener{
 

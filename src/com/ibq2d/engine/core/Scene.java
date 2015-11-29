@@ -8,11 +8,11 @@ public abstract class Scene implements IGameListener {
 
     public abstract void initializeScene();
 
-    public void AddToScene(GameListener gameListener) {
+    public final void AddToScene(GameListener gameListener) {
         gameListeners.add(gameListener);
     }
 
-    public void onInitializeScene() {
+    public final void onInitializeScene() {
         if (gameListeners.isEmpty())
             initializeScene();
     }

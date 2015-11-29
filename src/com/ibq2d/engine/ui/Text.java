@@ -1,4 +1,4 @@
-package com.ibq2d.engine.core;
+package com.ibq2d.engine.ui;
 
 import com.ibq2d.engine.geometry.Vector2;
 import org.newdawn.slick.TrueTypeFont;

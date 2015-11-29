@@ -3,11 +3,12 @@ package com.ibq2d.engine.physics;
 import com.ibq2d.engine.geometry.*;
 
 public class RigidBody {
-    private float mass;
+    private int mass;
     private Vector2 velocity;
+    private float friction, restitution;
     private Collider collider;
 
-    public RigidBody(float mass, Vector2 velocity, Collider collider) {
+    public RigidBody(int mass, Vector2 velocity, Collider collider) {
         this.mass = mass;
         this.velocity = velocity;
         this.collider = collider;

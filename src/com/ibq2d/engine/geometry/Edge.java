@@ -33,6 +33,8 @@ public class Edge extends Shape {
         return vec1;
     }
 
+    public Vector2 getNormal() { return normal; }
+
     @Override
     public boolean vectorInside(Vector2 vector) {
         return false;

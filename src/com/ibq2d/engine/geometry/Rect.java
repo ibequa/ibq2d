@@ -72,8 +72,7 @@ public class Rect extends Shape {
 
             return (a1.getX() < b2.getX() && a2.getX() > b1.getX() && a1.getY() < b2.getY() && a2.getY() > b1.getY());
         }
-        // TODO: IMPLEMENT SAT!
-        else return false;
+        return false;
     }
 
     @Override

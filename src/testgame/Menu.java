@@ -1,10 +1,7 @@
 package testgame;
 
-import com.ibq2d.engine.Application;
-import com.ibq2d.engine.core.GameListener;
-import com.ibq2d.engine.core.Input;
-import com.ibq2d.engine.core.SceneManager;
-import com.ibq2d.engine.core.Text;
+import com.ibq2d.engine.core.*;
+import com.ibq2d.engine.ui.Text;
 import org.lwjgl.input.Keyboard;
 
 public class Menu extends GameListener {
