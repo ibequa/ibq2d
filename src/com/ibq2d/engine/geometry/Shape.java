@@ -1,5 +1,7 @@
 package com.ibq2d.engine.geometry;
 
+import com.ibq2d.engine.core.Time;
+
 import java.util.ArrayList;
 
 public abstract class Shape {
@@ -57,6 +59,9 @@ public abstract class Shape {
     }
 
     public void scale(float byX, float byY) {
+        byX = (Time.timeScale == 0) ? 1 : byX*Time.timeScale;
+        byY = (Time.timeScale == 0) ? 1 : byY*Time.timeScale;
+
         Vector2 oldPos = getPosition();
         translate(new Vector2(-oldPos.getX(), -oldPos.getY()));
         for(int i = 0; i < vertices.size(); i++) {
@@ -66,37 +71,57 @@ public abstract class Shape {
         translate(oldPos);
     }
     public void scaleX(float byX) {
+        byX = (Time.timeScale == 0) ? 1 : byX*Time.timeScale;
+
         for (int i = 0; i < vertices.size(); i++) {
             Vector2 vertex = vertices.get(i);
             vertex.setX(vertex.getX() * byX);
         }
     }
     public void scaleY(float byY) {
+        byY = (Time.timeScale == 0) ? 1 : byY*Time.timeScale;
+
         for (int i = 0; i < vertices.size(); i++) {
             Vector2 vertex = vertices.get(i);
             vertex.setY(vertex.getY() * byY);
         }
     }
+    public void scaleXY(float by) {
+        by = (Time.timeScale == 0) ? 1 : by*Time.timeScale;
+
+        for (int i = 0; i < vertices.size(); i++) {
+            Vector2 vertex = vertices.get(i);
+            vertex.set(vertex.getX() * by, vertex.getY() * by);
+        }
+    }
 
     public void translate(Vector2 byVec) {
+        byVec = byVec.multiplyBy(Time.timeScale);
+
         for (int i = 0; i < vertices.size(); i++)
             vertices.get(i).set(Vector2.add(vertices.get(i), byVec));
         position = Vector2.add(position, byVec);
     }
 
     public void translateX(float byX) {
+        byX *= Time.timeScale;
+
         for (int i = 0; i < vertices.size(); i++)
             vertices.get(i).set((vertices.get(i).getX() + byX), vertices.get(i).getY());
         position = new Vector2(position.getX() + byX, position.getY());
     }
 
     public void translateY(float byY) {
+        byY *= Time.timeScale;
+
         for (int i = 0; i < vertices.size(); i++)
             vertices.get(i).set(vertices.get(i).getX(), (vertices.get(i).getY() + byY));
         position = new Vector2(position.getX(), position.getY() + byY);
     }
 
     public void rotate(double degree) {
+        degree *= Time.timeScale;
+
         Vector2 oldPos = getPosition();
         translate(new Vector2(-oldPos.getX(), -oldPos.getY()));
         this.rotation = ((float) degree + getRotation()) % 360;

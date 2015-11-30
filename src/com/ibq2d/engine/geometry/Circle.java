@@ -44,7 +44,7 @@ public class Circle extends Shape {
         float sqrDistance = Vector2.subtract(vector, this.getPosition()).sqrMagnitude();
         if (sqrDistance < this.getRadius())
             return true;
-        else return (sqrDistance > Math.pow(this.getRadius(), 2)) ? false : true;
+        else return sqrDistance <= Math.pow(this.getRadius(), 2);
     }
 
     @Override
@@ -91,14 +91,12 @@ public class Circle extends Shape {
     }
 
     @Override
-    public void scale(float byX, float byY) {
-        if (byX != byX)
-            return;
-        setRadius(getRadius() * byX);
+    public void scaleXY(float by) {
+        by = (Time.timeScale == 0) ? 1 : by*Time.timeScale;
+        setRadius(getRadius() * by);
     }
 
     @Override
     public void rotate(double degree) {
-        return;
     }
 }

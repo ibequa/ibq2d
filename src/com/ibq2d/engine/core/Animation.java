@@ -16,7 +16,7 @@ public class Animation {
     }
 
     public Texture getKeyFrame(float time) {
-        int index = (int) (time / stateTime);
+        int index = (Time.timeScale == 0) ? currentState : (int) (time * Time.timeScale / stateTime);
         return (index > statesTexture.length && !loop) ? null : statesTexture[index % statesTexture.length];
     }
 }

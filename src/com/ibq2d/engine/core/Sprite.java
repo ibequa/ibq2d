@@ -70,23 +70,38 @@ public class Sprite {
     }
 
     public void scale(float byX, float byY) {
+        byX = (Time.timeScale == 0) ? 1 : byX*Time.timeScale;
+        byY = (Time.timeScale == 0) ? 1 : byY*Time.timeScale;
+
         scale.set(scale.getX() * byX, scale.getY() * byY);
     }
-    public void scaleXY(float by) { scale.set(scale.getX() * by, scale.getY() * by); }
+    public void scaleXY(float by) {
+        by = (Time.timeScale == 0) ? 1 : by*Time.timeScale;
+
+        scale.set(scale.getX() * by, scale.getY() * by);
+    }
 
     public void rotate(float degree) {
+        degree *= Time.timeScale;
+
         this.rotation = (degree + getRotation()) % 360;
     }
 
     public void translate(Vector2 byVec) {
+        byVec = byVec.multiplyBy(Time.timeScale);
+
         position = Vector2.add(position, byVec);
     }
 
     public void translateX(float byX) {
+        byX *= Time.timeScale;
+
         position.set(position.getX() + byX, position.getY());
     }
 
     public void translateY(float byY) {
+        byY *= Time.timeScale;
+
         position.set(position.getX(), position.getY() + byY);
     }
 

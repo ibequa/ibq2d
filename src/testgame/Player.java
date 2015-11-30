@@ -50,13 +50,9 @@ public class Player extends GameListener {
         sprite.translateX(translation);
         collider.shape.translateX(translation);
 
+        // clamp to window edges
         sprite.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
         collider.shape.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
-
-        if (Input.getKeyDown(Keyboard.KEY_R))
-            SceneManager.loadAdditive(SceneManager.getSceneIndex("AdditiveScene"));
-        if (Input.getKeyDown(Keyboard.KEY_T))
-            SceneManager.unloadAdditive(SceneManager.getSceneIndex("AdditiveScene"));
     }
 
     @Override

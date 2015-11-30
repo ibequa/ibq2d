@@ -30,8 +30,7 @@ public class RigidBody {
     }
 
     public void update() {
-        Vector2 position = Vector2.add(collider.shape.getPosition(), velocity);
-        collider.shape.setPosition(position);
+        collider.shape.translate(velocity);
     }
 
     public Vector2 getVelocity() {
