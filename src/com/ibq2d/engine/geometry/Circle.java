@@ -42,9 +42,8 @@ public class Circle extends Shape {
     @Override
     public boolean vectorInside(Vector2 vector) {
         float sqrDistance = Vector2.subtract(vector, this.getPosition()).sqrMagnitude();
-        if (sqrDistance < this.getRadius())
-            return true;
-        else return sqrDistance <= Math.pow(this.getRadius(), 2);
+
+        return sqrDistance < this.getRadius() || sqrDistance <= Math.pow(this.getRadius(), 2);
     }
 
     @Override
