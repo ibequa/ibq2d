@@ -4,7 +4,6 @@ import com.ibq2d.engine.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
-import org.lwjgl.input.Keyboard;
 
 public class Player extends GameListener {
 
@@ -15,8 +14,6 @@ public class Player extends GameListener {
 
     float speed = 8;
     float translation;
-
-    Audio backgroundSound;
 
     @Override
     public void awake() {
@@ -39,9 +36,6 @@ public class Player extends GameListener {
 
         sprite.translateY(-Application.HEIGHT / 2 + sprite.getWidth() / 2 - 40);
         collider.shape.translateY(-Application.HEIGHT / 2 + sprite.getWidth() / 2 - 40);
-
-        backgroundSound = new Audio("background.wav", 0.25f, 1, true);
-        backgroundSound.playAsMusic();
     }
 
     @Override

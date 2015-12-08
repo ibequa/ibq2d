@@ -12,11 +12,11 @@ public final class SceneManager {
         SceneManager.currentScene = currentScene;
     }
 
-    protected static Scene getCurrentScene() {
+    public static Scene getCurrentScene() {
         return currentScene;
     }
 
-    protected static int getCurrentSceneIndex() {
+    public static int getCurrentSceneIndex() {
         return currentSceneIndex;
     }
 
@@ -34,9 +34,6 @@ public final class SceneManager {
             if (nameFormated.equals(name))
                 return i;
         }
-
-        System.err.println("Invalid scene name");
-        System.exit(1);
         return -1;
     }
 
@@ -47,6 +44,10 @@ public final class SceneManager {
         }
         SceneManager.setCurrentSceneIndex(sceneIndex);
         SceneManager.setCurrentScene(Application.scenes[sceneIndex]);
+    }
+
+    public static void load(String scene) {
+        load(getSceneIndex(scene));
     }
 
     public static void loadAdditive(int sceneIndex) {
@@ -60,10 +61,7 @@ public final class SceneManager {
 
     public static void unloadAdditive(int sceneIndex) {
         Scene scene = Application.scenes[sceneIndex];
-        if (!Core.additives.remove(scene)) {
-            System.err.println("Error unloading additive scene");
-            System.exit(1);
-        }
+        assert(Core.additives.remove(scene));
         scene.destroy();
     }
 

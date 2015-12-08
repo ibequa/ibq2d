@@ -11,6 +11,7 @@ class Core {
     private boolean isRunning;
     private static Scene runningScene;
     protected static HashSet<Scene> additives;
+    protected static HashSet<GameListener> persistentObjects;
 
     protected static boolean onRestart = false;
 
@@ -19,6 +20,7 @@ class Core {
 
         Core game = new Core();
         additives = new HashSet<>();
+        persistentObjects = new HashSet<>();
 
         game.awake();
     }
@@ -43,6 +45,16 @@ class Core {
         runningScene.awake();
         runningScene.onEnable();
         runningScene.start();
+
+        for (GameListener persistentObj : persistentObjects) {
+            persistentObj.awake();
+            if (persistentObj.isEnabled()) {
+                persistentObj.onEnable();
+                persistentObj.start();
+                persistentObj.startCalled = true;
+            }
+            persistentObj.persistentActed = true;
+        }
 
         run();
     }
@@ -81,6 +93,10 @@ class Core {
                 for (Scene additive : additives)
                     additive.update();
 
+                for (GameListener persistentObj : persistentObjects)
+                        persistentObj.update();
+
+                // restarting current scene
                 if (onRestart) {
                     runningScene.onDestroy();
 
@@ -96,10 +112,20 @@ class Core {
                     runningScene.onEnable();
                     runningScene.start();
 
+                    for (GameListener persistentObj : persistentObjects) {
+                        if (!persistentObj.persistentActed) {
+                            persistentObj.awake();
+                            persistentObj.onEnable();
+                            persistentObj.start();
+                            persistentObj.persistentActed = true;
+                        }
+                    }
+
                     System.gc();
                     onRestart = false;
                 }
 
+                // changing scene
                 if (runningScene != SceneManager.getCurrentScene()) {
                     if (runningScene != null)
                         runningScene.onDestroy();
@@ -116,6 +142,15 @@ class Core {
                     runningScene.awake();
                     runningScene.onEnable();
                     runningScene.start();
+
+                    for (GameListener persistentObj : persistentObjects) {
+                        if (!persistentObj.persistentActed) {
+                            persistentObj.awake();
+                            persistentObj.onEnable();
+                            persistentObj.start();
+                            persistentObj.persistentActed = true;
+                        }
+                    }
 
                     System.gc();
                 }
@@ -145,6 +180,15 @@ class Core {
 
         for (Scene additive : additives)
             additive.onQuit();
+
+
+        for (GameListener persistentObj : persistentObjects)
+            persistentObj.destroy();
+
+        for (GameListener persistentObj : persistentObjects)
+            persistentObj.onQuit();
+
+        persistentObjects.clear();
 
         runningScene.onQuit();
         AL.destroy();

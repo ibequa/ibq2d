@@ -86,7 +86,7 @@ public class Text {
     }
 
     public void draw(Vector2 position, Color color) {
-        font.drawString(position.getX() - font.getWidth(text)/2, position.getY(), text, color);
+        font.drawString(position.getX() - font.getWidth(text)/2, position.getY() - getHeight()/2, text, color);
     }
 
     public void draw() {

@@ -4,6 +4,7 @@ import com.ibq2d.engine.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
+import java.util.*;
 
 public class AIPlayer extends GameListener {
     Texture texture;
@@ -14,8 +15,11 @@ public class AIPlayer extends GameListener {
     float speed = 8;
     float translation;
 
+    Random rand;
+
     @Override
     public void awake() {
+        rand = new Random();
 
         texture = new Texture("aiplayer.png");
         spriteBatch = new SpriteBatch();

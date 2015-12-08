@@ -7,7 +7,7 @@ public final class Time {
 
     public static float timeScale = 1;
 
-    protected static final double NANOSECOND = 1000000000;
+    protected static final double NANOSECOND = 1_000_000_000;
 
     public static double getTime() {
         return System.nanoTime() / NANOSECOND;

@@ -12,9 +12,22 @@ public abstract class Scene implements IGameListener {
         gameListeners.add(gameListener);
     }
 
+    public final void AddToScenePersistent(GameListener gameListener) {
+        Core.persistentObjects.add(gameListener);
+    }
+
+    public GameListener findGameListener(String gameListener) {
+        for (GameListener gmls : gameListeners) {
+            String nameUnformatted = gmls.getClass().getName();
+            String nameFormatted = nameUnformatted.substring(nameUnformatted.lastIndexOf(".") + 1);
+            if (nameFormatted.equals(gameListener))
+                return gmls;
+        }
+        return null;
+    }
+
     public final void onInitializeScene() {
-        if (gameListeners.isEmpty())
-            initializeScene();
+        initializeScene();
     }
 
     @Override
@@ -47,8 +60,8 @@ public abstract class Scene implements IGameListener {
     @Override
     public final void update() {
         for (GameListener gameListener : gameListeners)
-        if (gameListener.isEnabled())
-            gameListener.update();
+            if (gameListener.isEnabled())
+                gameListener.update();
     }
 
     @Override
@@ -65,8 +78,6 @@ public abstract class Scene implements IGameListener {
         }
 
         gameListeners.clear();
-
-        destroy();
     }
 
     @Override

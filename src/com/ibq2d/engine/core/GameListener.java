@@ -3,6 +3,7 @@ package com.ibq2d.engine.core;
 public abstract class GameListener implements IGameListener {
 
     private boolean enabled = true;
+    boolean persistentActed = false;
     boolean startCalled = false;
 
     @Override
