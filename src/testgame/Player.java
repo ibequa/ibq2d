@@ -4,6 +4,7 @@ import com.ibq2d.engine.Application;
 import com.ibq2d.engine.core.*;
 import com.ibq2d.engine.geometry.*;
 import com.ibq2d.engine.physics.*;
+import org.lwjgl.input.Keyboard;
 
 public class Player extends GameListener {
 
@@ -47,6 +48,9 @@ public class Player extends GameListener {
         // clamp to window edges
         sprite.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
         collider.shape.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
+
+        if (Input.getKeyDown(Keyboard.KEY_ESCAPE))
+            SceneManager.loadAdditive("PauseScreen");
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.ibq2d.engine.core;
 
+import com.ibq2d.engine.Application;
 import org.newdawn.slick.opengl.TextureLoader;
 import static org.lwjgl.opengl.GL11.*;
 
@@ -16,7 +17,7 @@ public class Texture {
     public Texture(String fileName) {
         String ext = fileName.substring(fileName.lastIndexOf(".") + 1);
         try {
-            texture = TextureLoader.getTexture(ext, new FileInputStream(new File("./res/textures/" + fileName)));
+            texture = TextureLoader.getTexture(ext, new FileInputStream(new File(Application.PATH_TO_TEXTURES + fileName)));
 
             halfHeight = texture.getImageHeight() / 2;
             halfWidth = texture.getImageWidth() / 2;

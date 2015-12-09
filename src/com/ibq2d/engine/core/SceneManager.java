@@ -46,8 +46,8 @@ public final class SceneManager {
         SceneManager.setCurrentScene(Application.scenes[sceneIndex]);
     }
 
-    public static void load(String scene) {
-        load(getSceneIndex(scene));
+    public static void load(String sceneName) {
+        load(getSceneIndex(sceneName));
     }
 
     public static void loadAdditive(int sceneIndex) {
@@ -58,11 +58,16 @@ public final class SceneManager {
         scene.onEnable();
         scene.start();
     }
+    public static void loadAdditive(String sceneName) {
+        loadAdditive(getSceneIndex(sceneName));
+    }
 
     public static void unloadAdditive(int sceneIndex) {
         Scene scene = Application.scenes[sceneIndex];
-        assert(Core.additives.remove(scene));
-        scene.destroy();
+
+        assert(Core.additives.contains(scene));
+
+        Core.additivesToUnload.add(scene);
     }
 
     public static void loadPause(int sceneIndex) {

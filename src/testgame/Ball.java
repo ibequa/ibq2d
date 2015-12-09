@@ -22,17 +22,17 @@ public class Ball extends GameListener {
 
     @Override
     public void awake() {
+        hitSound = new Audio("hitSound.wav", false, Audio.PlayMode.PLAY_AS_SOUNDEFFECT);
+
         texture = new Texture("ball.png");
         spriteBatch = new SpriteBatch();
         sprite = new Sprite(texture);
-
-        hitSound = new Audio("hitSound.wav", false);
 
         collider = new CircleCollider(new Circle(sprite), false, new ContactListener() {
             @Override
             public void onContactEnter(Collider collider) {
                 if (collider.tag == "Platform") {
-                    hitSound.playAsSoundEffect();
+                    AudioSource.instance.play(hitSound);
                 }
             }
         });

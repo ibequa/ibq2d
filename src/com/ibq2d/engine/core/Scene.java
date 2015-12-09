@@ -16,7 +16,7 @@ public abstract class Scene implements IGameListener {
         Core.persistentObjects.add(gameListener);
     }
 
-    public GameListener findGameListener(String gameListener) {
+    public final GameListener findGameListener(String gameListener) {
         for (GameListener gmls : gameListeners) {
             String nameUnformatted = gmls.getClass().getName();
             String nameFormatted = nameUnformatted.substring(nameUnformatted.lastIndexOf(".") + 1);

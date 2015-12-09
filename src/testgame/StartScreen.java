@@ -6,8 +6,11 @@ public class StartScreen extends Scene {
 
     @Override
     public void initializeScene() {
-        AddToScene(new Slider());
-        AddToScene(new Menu());
+        StartMenu startMenu = new StartMenu();
+
+        AddToScene(new Slider(startMenu));
+        AddToScene(startMenu);
+        AddToScenePersistent(AudioSource.instance = new AudioSource());
         AddToScenePersistent(new BackgroundSound());
     }
 }

@@ -1,5 +1,6 @@
 package com.ibq2d.engine.ui;
 
+import com.ibq2d.engine.Application;
 import com.ibq2d.engine.geometry.Vector2;
 import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.util.ResourceLoader;
@@ -39,7 +40,7 @@ public class Text {
         this.text = text;
 
         try {
-            InputStream inputStream = ResourceLoader.getResourceAsStream("./res/fonts/" + fontFile);
+            InputStream inputStream = ResourceLoader.getResourceAsStream(Application.PATH_TO_FONTS + fontFile);
 
             Font awtFont = Font.createFont(Font.TRUETYPE_FONT, inputStream);
             awtFont = awtFont.deriveFont(size);

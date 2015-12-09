@@ -13,6 +13,8 @@ class Core {
     protected static HashSet<Scene> additives;
     protected static HashSet<GameListener> persistentObjects;
 
+    protected static HashSet<Scene> additivesToUnload;
+
     protected static boolean onRestart = false;
 
     public static void main(String[] args) {
@@ -21,6 +23,7 @@ class Core {
         Core game = new Core();
         additives = new HashSet<>();
         persistentObjects = new HashSet<>();
+        additivesToUnload = new HashSet<>();
 
         game.awake();
     }
@@ -96,12 +99,15 @@ class Core {
                 for (GameListener persistentObj : persistentObjects)
                         persistentObj.update();
 
+                if (!additivesToUnload.isEmpty())
+                    UnloadAdditives();
+
                 // restarting current scene
                 if (onRestart) {
                     runningScene.onDestroy();
 
                     for (Scene additive : additives)
-                        additive.destroy();
+                        additive.onDestroy();
 
                     ContactDetection.listeners.clear();
                     ContactDetection.contactingWith.clear();
@@ -163,6 +169,14 @@ class Core {
                 render();
             }
         }
+    }
+
+    private void UnloadAdditives() {
+        for (Scene additive : additivesToUnload) {
+            additives.remove(additive);
+            additive.onDestroy();
+        }
+        additivesToUnload.clear();
     }
 
     private void render() { Window.render();}

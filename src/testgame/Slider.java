@@ -13,16 +13,18 @@ public class Slider extends GameListener {
     private float moveCoef = 25;
     private int sliderState;
 
+    public Slider(Menu menu) {
+        this.menu = menu;
+    }
+
     @Override
     public void awake() {
-        menu = (Menu) SceneManager.getCurrentScene().findGameListener("Menu");
-
         spriteBatch = new SpriteBatch();
         sprite = new Sprite(new Texture("slider.png"));
 
         sprite.scaleXY(0.3f);
         sprite.rotate(-90);
-        sprite.translate(new Vector2(-60, 40));
+        sprite.setPosition(new Vector2(-60, 40));
     }
 
     @Override
@@ -32,12 +34,12 @@ public class Slider extends GameListener {
 
         if (Input.getKeyDown(Keyboard.KEY_S) && sliderState + 1 < menu.getMenuButtons().size()) {
             sliderState++;
-            sprite.translateY(-moveCoef);
+            sprite.setY(sprite.getPosition().getY() - moveCoef);
         }
 
         if (Input.getKeyDown(Keyboard.KEY_W) && sliderState > 0) {
             sliderState--;
-            sprite.translateY(moveCoef);
+            sprite.setY(sprite.getPosition().getY() + moveCoef);
         }
     }
 
