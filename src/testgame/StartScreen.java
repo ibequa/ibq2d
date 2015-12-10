@@ -10,7 +10,7 @@ public class StartScreen extends Scene {
 
         AddToScene(new Slider(startMenu));
         AddToScene(startMenu);
-        AddToScenePersistent(AudioSource.instance = new AudioSource());
-        AddToScenePersistent(new BackgroundSound());
+        AddToScenePersistent(AudioSource.getInstance());
+        AddToScenePersistent(BackgroundSound.getInstance());
     }
 }

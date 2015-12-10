@@ -4,6 +4,7 @@ import com.ibq2d.engine.Application;
 import com.ibq2d.engine.physics.ContactDetection;
 import org.lwjgl.openal.AL;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 class Core {
@@ -11,7 +12,9 @@ class Core {
     private boolean isRunning;
     private static Scene runningScene;
     protected static HashSet<Scene> additives;
-    protected static HashSet<GameListener> persistentObjects;
+
+    protected static ArrayList<GameListener> persistentObjects;
+    protected static HashSet<String> persistentObjectNames;
 
     protected static HashSet<Scene> additivesToUnload;
 
@@ -22,7 +25,10 @@ class Core {
 
         Core game = new Core();
         additives = new HashSet<>();
-        persistentObjects = new HashSet<>();
+
+        persistentObjects = new ArrayList<>();
+        persistentObjectNames = new HashSet<>();
+
         additivesToUnload = new HashSet<>();
 
         game.awake();

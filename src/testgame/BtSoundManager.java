@@ -7,11 +7,13 @@ public class BtSoundManager extends Button {
 
     Text text;
 
-    boolean state = true;
-
     @Override
     public void awake() {
-        text = new Text("Sound on", 20);
+        text = new Text("", 20);
+        if (AudioSource.instance.enabled)
+            text.setText("Sound on");
+        else text.setText("Sound off");
+
         text.setPosition(new Vector2(-8, 12));
     }
 
@@ -22,7 +24,8 @@ public class BtSoundManager extends Button {
 
     @Override
     public void onClick() {
-        state = !state;
+        boolean state = !AudioSource.instance.enabled;
+        AudioSource.instance.enabled = state;
         if (state) {
             text.setText("Sound on");
             AudioSource.instance.resume();

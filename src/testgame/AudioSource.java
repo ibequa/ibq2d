@@ -12,6 +12,11 @@ public class AudioSource extends GameListener {
 
     public static AudioSource instance = null;
 
+    public static AudioSource getInstance() {
+        if (instance == null)
+            instance = new AudioSource();
+        return instance;
+    }
 
     public void addAudio(Audio audio) {
         audios.add(audio);

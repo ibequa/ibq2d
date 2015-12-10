@@ -49,7 +49,7 @@ public class Player extends GameListener {
         sprite.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
         collider.shape.setX(Mathq.clamp(sprite.getPosition().getX(), -Application.WIDTH / 2 + sprite.getWidth() / 2, Application.WIDTH / 2 - sprite.getWidth() / 2));
 
-        if (Input.getKeyDown(Keyboard.KEY_ESCAPE))
+        if (Input.getKeyDown(Keyboard.KEY_ESCAPE) && Time.timeScale > 0)
             SceneManager.loadAdditive("PauseScreen");
     }
 

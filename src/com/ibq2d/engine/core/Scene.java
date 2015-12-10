@@ -13,14 +13,17 @@ public abstract class Scene implements IGameListener {
     }
 
     public final void AddToScenePersistent(GameListener gameListener) {
+        String gmlsName = gameListener.getClass().getSimpleName();
+        if (Core.persistentObjectNames.contains(gmlsName))
+            return;
+        Core.persistentObjectNames.add(gmlsName);
         Core.persistentObjects.add(gameListener);
     }
 
+    // TODO: search through persistent objects
     public final GameListener findGameListener(String gameListener) {
         for (GameListener gmls : gameListeners) {
-            String nameUnformatted = gmls.getClass().getName();
-            String nameFormatted = nameUnformatted.substring(nameUnformatted.lastIndexOf(".") + 1);
-            if (nameFormatted.equals(gameListener))
+            if (gmls.getClass().getSimpleName().equals(gameListener))
                 return gmls;
         }
         return null;

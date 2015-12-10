@@ -3,8 +3,18 @@ package com.ibq2d.engine.core;
 public abstract class GameListener implements IGameListener {
 
     private boolean enabled = true;
+    private String name;
+
     boolean persistentActed = false;
     boolean startCalled = false;
+
+    public GameListener() {
+        name = getClass().getSimpleName();
+    }
+
+    public final String getName() {
+        return name;
+    }
 
     @Override
     public void awake() {
