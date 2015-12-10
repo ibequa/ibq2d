@@ -14,4 +14,4 @@
 <hr>
 <b><a href="https://github.com/ibequa/ibq2d/wiki">WIKI</a></b>
 
-<sub><i>inspired by <a href="https://unity3d.com">Unity3D</a> and <a href="https://libgdx.badlogicgames.com">LibGDX</a></i></sub>
+<sub><i>inspired by <a href="https://unity3d.com" target="_blank">Unity3D</a> and <a href="https://libgdx.badlogicgames.com" target="_blank">LibGDX</a></i></sub>
